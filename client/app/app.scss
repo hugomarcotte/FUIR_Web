@@ -1,0 +1,44 @@
+$icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+$fa-font-path: "/bower_components/font-awesome/fonts";
+
+@import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
+@import 'font-awesome/scss/font-awesome';
+@import '../assets/fonts/dharmagothicp_regular_macroman/stylesheet.css';
+@import '../assets/fonts/dharmagothicp_bold_macroman/stylesheet.css';
+@import '../assets/fonts/dharmagothicp_bolditalic_macroman/stylesheet.css';
+@import '../assets/fonts/dharmagothicp_italic_macroman/stylesheet.css';
+
+/**
+ * App-wide Styles
+ */
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+.navLogo {
+  img {
+    height:45px;
+    width:auto;
+  }
+}
+.navbar-default {
+  background-color: #B7B8BD;
+}
+
+body {
+  font-family: 'DharmaGothicPBold',  sans-serif;
+  font-size: 3em;
+  
+}
+
+// Component styles are injected through grunt
+// injector
+@import 'account/login/login.scss';
+@import 'main/main.scss';
+@import 'privacy/privacy.scss';
+@import 'terms/terms.scss';
+@import 'modal/modal.scss';
+// endinjector
