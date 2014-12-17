@@ -1,19 +1,18 @@
-
-  <nav class="grey lighten-1">
-    <div class="container" ng-controller="NavbarCtrl">
-      <div class="nav-wrapper">
-        <a href="#" class="brand-logo">
-          <img src="assets/images/question_guy_red.png" alt="Logo" style="height:45px; width:auto;">
-          <span>F.U. I'M RIGHT</span>
-        </a>
-        <ul id="nav-mobile" class="right side-nav">
-          <li><a href="" ng-show="isLoggedIn()" ng-click="logout()">Logout</a></li>
-          <li><a href="/login" ng-hide="isLoggedIn()">Register / Sign up</a></li>
-        </ul>
-        <a class="button-collapse" href="#" data-activates="nav-mobile"><i class="mdi-navigation-menu"></i></a>
-      </div>
+<nav class="grey lighten-1">
+  <div class="container navFUIR" ng-controller="NavbarCtrl">
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo">
+        <img src="assets/images/question_guy_red.png" alt="Logo">
+        <span>F.U. I'M RIGHT</span>
+      </a>
+      <ul id="nav-mobile" class="right side-nav">
+        <li><a href="" ng-show="isLoggedIn()" ng-click="logout()">Logout</a></li>
+        <li><a href="/login" ng-hide="isLoggedIn()">Register / Sign up</a></li>
+      </ul>
+      <a class="button-collapse" href="#" data-activates="nav-mobile"><i class="mdi-navigation-menu"></i></a>
     </div>
-  </nav>
+  </div>
+</nav>
 
 <!-- <div class="card-panel grey lighten-1" style="margin-top: 0px;">
   <div class="container">
@@ -31,7 +30,7 @@
     </div>
   </div>
 </div> -->
-<!-- 
+<!--
 <div class="navbar navbar-default navbar-static-top" ng-controller="NavbarCtrl">
   <div class="container">
     <div class="navbar-header">

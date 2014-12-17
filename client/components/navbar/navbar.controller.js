@@ -27,7 +27,6 @@ angular.module('fuirApp')
 
 
     $scope.logout = function() {
-      alert('test');
       ParseUser.logout();
     };
 

@@ -12,9 +12,9 @@ $btnGithubBackgroundHighlight:      #ccc;
 // Social buttons
 // --------------------------------------------------
 
-.btn-facebook {
-  @include button-variant($btnText, $btnFacebookBackgroundHighlight, $btnFacebookBackgroundHighlight);
+/* .btn-facebook {
+  @include button-variant(\$btnText, \$btnFacebookBackgroundHighlight, \$btnFacebookBackgroundHighlight);
 }
 .btn-github {
-  @include button-variant($btnTextAlt, $btnGithubBackground, $btnGithubBackgroundHighlight);
-}
+  @include button-variant(\$btnTextAlt, \$btnGithubBackground, \$btnGithubBackgroundHighlight);
+} */

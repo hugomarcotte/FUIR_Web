@@ -23,15 +23,17 @@
 }
 
 .footer {
-    padding: 30px 0;
-    margin-top: 35px;
-    border-top: 1px solid #E5E5E5;
+    color: black;
+}
+.footer-copyright {
+  font-size: .75em;
+  margin: 0px;
 }
 
-.logo {
+.appStoreLogo {
 
   img {
-    height: 60px;
+    height: 51px;
     width:auto;
   }
 }
