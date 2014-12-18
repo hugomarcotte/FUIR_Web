@@ -3,6 +3,7 @@
 angular.module('fuirApp')
 .factory('ParseUser', function ($q) {
   var userName = '';
+  var pictureUrl = '';
 
   return {
 
@@ -13,9 +14,27 @@ angular.module('fuirApp')
       Parse.FacebookUtils.logIn(null, {
         success: function(user) {
           FB.api('/me', {fields: 'name'}, function(response) {
-            userName = response.name;
-            deferred.resolve();
+
+            if (response && !response.error) {
+              userName = response.name;
+
+              FB.api(
+                "/me/picture",
+                function (response2) {
+                  if (response2 && !response2.error) {
+                    pictureUrl = response2.data.url;
+                  }
+                  else {
+                    console.log(response2.error);
+                  }
+              });
+            }
+            else {
+              console.log(response.error);
+            }
           });
+
+          deferred.resolve();
         },
         error: function(user, error) {
           deferred.reject(error);
@@ -59,6 +78,30 @@ angular.module('fuirApp')
           }
         });
       }
+      return deferred.promise;
+    },
+
+    getPictureURL: function() {
+      var deferred = $q.defer();
+
+      if(pictureUrl || !Parse.User.current()) {
+        deferred.resolve(pictureUrl);
+      }
+      else if(Parse.User.current()) {
+        FB.api(
+          "/me/picture",
+          function (response) {
+            if (response && !response.error) {
+              pictureUrl = response.data.url;
+              deferred.resolve(pictureUrl);
+            }
+            else {
+              deferred.reject(response.error);
+            }
+          }
+        );
+      }
+
       return deferred.promise;
     }
 

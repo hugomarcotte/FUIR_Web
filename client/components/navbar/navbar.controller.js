@@ -25,6 +25,14 @@ angular.module('fuirApp')
       console.log(err);
     });
 
+    ParseUser.getPictureURL()
+    .then(function(pictureURL) {
+      $scope.pictureURL = pictureURL;
+    })
+    .catch(function(err) {
+      console.log(err);
+    });
+
 
     $scope.logout = function() {
       ParseUser.logout();
