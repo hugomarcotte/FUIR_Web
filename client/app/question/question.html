@@ -1,0 +1,38 @@
+<!-- <div class="row z-depth-3 questionCard">
+  <div class="col s12 ">
+    <h3>{{question.get("questionText")}}</h3>
+  </div>
+  <div class="col s12 ">
+    <button type="button" class="btn" style="background-color:#CD0118; margin: 5px 0px" ng-click="saveAnswer(question.id, 1)">{{question.get("answer1Text")}}</button>
+    <label ng-show="question.results">{{question.results.percentAnsw1}}%</label>
+  </div>
+  <div class="col s12 ">
+    <button type="button" class="btn" style="background-color:#CD0118; margin: 5px 0px" ng-click="saveAnswer(question.id, 2)">{{question.get("answer2Text")}}</button>
+    <label ng-show="question.results">{{question.results.percentAnsw2}}%</label>
+    <div ng-show="question.results">
+      <div ng-show="!question.results.inMajority">
+        You're Wrong!
+      </div>
+      <div ng-show="question.results.inMajority">
+        You're Right!
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="row orangeCard">
+  <div class="col s12">
+    <div class="card">
+      <div class="card-content">
+        <h4 class="flow-text">{{question.get("questionText")}}</h4>
+        <img src="assets/images/question_guy_red.png" alt="Logo">
+      </div>
+      <div>
+        <a class="btn flow-text" href="#">{{question.get("answer1Text")}}</a>
+      </div>
+      <div>
+        <a class="btn flow-text" href='#'>{{question.get("answer2Text")}}</a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -24,82 +24,12 @@
     </div>
   </div>
 </div>
-<div class="container" style="text-align:center;"  ng-hide="!isLoggedIn()">
-  <ul class="list-group">
-    <li class="list-group-item" ng-repeat="question in questions">
-      <strong>{{question.get("questionText")}}</strong>
-      <br>
-      <button type="button" class="btn" style="background-color:#CD0118; margin: 5px 0px" ng-click="saveAnswer(question.id, 1)">{{question.get("answer1Text")}}</button>
-      <label ng-show="question.results">{{question.results.percentAnsw1}}%</label>
-      <button type="button" class="btn" style="background-color:#CD0118; margin: 5px 0px" ng-click="saveAnswer(question.id, 2)">{{question.get("answer2Text")}}</button>
-      <label ng-show="question.results">{{question.results.percentAnsw2}}%</label>
-      <div ng-show="question.results">
-        <div ng-show="!question.results.inMajority">
-          You're Wrong!
-        </div>
-        <div ng-show="question.results.inMajority">
-          You're Right!
-        </div>
-      </div>
-
-    </li>
-  </ul>
+<div class="container" ng-repeat="question in questions" ng-hide="!isLoggedIn()">
+  <div class="row">
+    <div class="col s10 m8 l8 offset-s1 offset-m2 offset-l2">
+      <question q="question"></question>
+    </div>
+  </div>
 </div>
 
-<footer class="grey lighten-1">
-  <div class="container">
-    <div class="row">
-      <div class="col l4 s12">
-        <h3>Download the IOS app</h3>
-        <p>
-          lorem ipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsum lorem ipsumlorem ipsum
-          lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum
-          lorem ipsum
-        </p>
-        <a class="appStoreLogo" href="https://itunes.apple.com/app/id920877615?mt=8">
-          <img src="assets/images/AppStoreLogo.png" alt="AppStore">
-        </a>
-      </div>
-      <div class="col l4 s12">
-        <h3>F.U. I'M RIGHT podcast</h3></h3></h3>
-        <p>
-          lorem ipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsum lorem ipsumlorem ipsum
-          lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum
-          lorem ipsum
-        </p>
-        <a href="https://itunes.apple.com/us/podcast/f.u.-im-right/id879984798?mt=2" target="_blank">Podcast</a>
-      </div>
-      <div class="col l4 s12">
-        <h3>Connect with us</h3>
-        <li><a href="/privacy">Privacy</a></li>
-        <li><a href="/Terms">Terms</a></li>
-        <li><a href="https://itunes.apple.com/us/podcast/f.u.-im-right/id879984798?mt=2" target="_blank">Podcast</a></li>
-        <li><a href="https://twitter.com/fuimright" target="_blank">Twitter</a></li>
-        <li><a href="https://www.facebook.com/fuimright" target="_blank">Facebook</a></li>
-      </div>
-    </div>
-  </div>
-  <div class="footer-copyright">
-    <div class="container">
-      © FUIR, LLC. 2014
-      <a class="right" href="/privacy">Privacy</a>
-      <a class="right" href="/Terms">Terms</a>
-    </div>
-  </div>
-</footer>
-<!-- <footer class="footer">
-  <div class="container">
-      <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-6">
-          <p>© FUIR, LLC. 2014</p>
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-6 navFooter" style="">
-          <a href="/privacy">Privacy</a>
-          <a href="/terms">Terms</a>
-          <a href="https://itunes.apple.com/us/podcast/f.u.-im-right/id879984798?mt=2" target="_blank">Podcast</a>
-          <a href="https://twitter.com/fuimright" target="_blank">Twitter</a>
-          <a href="https://www.facebook.com/fuimright" target="_blank">Facebook</a>
-        </div>
-      </div>
-  </div>
-</footer> -->
+<div ng-include="'components/footer/footer.html'"></div>

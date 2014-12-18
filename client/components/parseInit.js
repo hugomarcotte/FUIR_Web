@@ -6,7 +6,7 @@ window.fbAsyncInit = function() {
     status     : false,
     version:  'v2.0',
     cookie     : true,
-    xfbml      : false
+    xfbml      : true
   });
 
   // Run code after the Facebook SDK is loaded.

@@ -3,6 +3,7 @@
 angular.module('fuirApp')
   .controller('MainCtrl', function ($scope, $http, ParseUser, Question) {
     $scope.isLoggedIn = ParseUser.isLoggedIn;
+    $scope.questionIndex = 1;
 
     if($scope.isLoggedIn()) {
 
@@ -15,6 +16,10 @@ angular.module('fuirApp')
       });
     }
 
+    $scope.filterQuestions = function(question) {
+      return $scope.questions.indexOf(question) === $scope.questionIndex;
+    };
+
     $scope.saveAnswer = function(questionId, answerIndex) {
 
       // Save answer
@@ -25,7 +30,7 @@ angular.module('fuirApp')
         Question.getQuestion(questionId)
         .then(function(question){
 
-          // Add results to question in scope
+          // // Add results to question in scope
           $scope.questions.forEach(function(elem) {
             if(elem.id === question.id) {
               elem.results = {

@@ -1,65 +1,16 @@
-<nav class="grey lighten-1">
-  <div class="container navFUIR" ng-controller="NavbarCtrl">
+<nav class="grey lighten-1 navFUIR">
+  <div class="container" ng-controller="NavbarCtrl">
     <div class="nav-wrapper">
       <a href="/" class="brand-logo">
         <img src="assets/images/question_guy_red.png" alt="Logo">
         <span>F.U. I'M RIGHT</span>
       </a>
-      <ul id="nav-mobile" class="right side-nav">
-        <li><a href="" ng-show="isLoggedIn()" ng-click="logout()">Logout</a></li>
-        <li><a href="/login" ng-hide="isLoggedIn()">Register / Sign up</a></li>
-      </ul>
+      <div class="right">
+        <span ng-show="isLoggedIn()" style="margin-right:15px;">Hello {{ userName }}</span>
+        <a href="" ng-show="isLoggedIn()" ng-click="logout()">Logout</a>
+        <a href="/login" ng-hide="isLoggedIn()">Register / Sign up</a>
+      </div>
       <a class="button-collapse" href="#" data-activates="nav-mobile"><i class="mdi-navigation-menu"></i></a>
     </div>
   </div>
 </nav>
-
-<!-- <div class="card-panel grey lighten-1" style="margin-top: 0px;">
-  <div class="container">
-    <div class="row" style="margin-bottom: 0px;">
-      <div class="col l6">
-        <a href="/" class="navLogo">
-          <img src="assets/images/question_guy_red.png" alt="Logo">
-          <img src="assets/images/title.png" alt="F.U. I'M RIGHT">
-        </a>
-      </div>
-      <div class="col l6" style="text-align:right;">
-        <a href="" ng-show="isLoggedIn()" ng-class="{active: isActive('/login')}" ng-click="logout()">Logout</a>
-        <a href="/login" ng-class="{active: isActive('/logout')}" ng-hide="isLoggedIn()">Register / Sign up</a>
-      </div>
-    </div>
-  </div>
-</div> -->
-<!--
-<div class="navbar navbar-default navbar-static-top" ng-controller="NavbarCtrl">
-  <div class="container">
-    <div class="navbar-header">
-      <button class="navbar-toggle" type="button" ng-click="isCollapsed = !isCollapsed">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a href="/" class="navbar-brand navLogo">
-        <img src="assets/images/question_guy_red.png" alt="Logo">
-        <img src="assets/images/title.png" alt="F.U. I'M RIGHT">
-      </a>
-    </div>
-    <div collapse="isCollapsed" class="navbar-collapse collapse" id="navbar-main">
-      <ul class="nav navbar-nav">
-        <li ng-repeat="item in menu" ng-class="{active: isActive(item.link)}">
-            <a ng-href="{{item.link}}">{{item.title}}</a>
-        </li>
-        <li ng-show="isAdmin()" ng-class="{active: isActive('/admin')}"><a href="/admin">Admin</a></li>
-      </ul>
-
-      <ul class="nav navbar-nav navbar-right">
-        <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/signup')}"><a href="/signup">Sign up</a></li>
-        <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/login')}"><a href="/login">Register / Sign up</a></li>
-        <li ng-show="isLoggedIn()"><p class="navbar-text">Hello {{ userName }}</p> </li>
-        <li ng-show="isLoggedIn()" ng-class="{active: isActive('/settings')}"><a href="/settings"><span class="glyphicon glyphicon-cog"></span></a></li>
-        <li ng-show="isLoggedIn()" ng-class="{active: isActive('/logout')}"><a href="" ng-click="logout()">Logout</a></li>
-      </ul>
-    </div>
-  </div>
-</div> -->
