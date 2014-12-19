@@ -41,4 +41,27 @@ angular.module('fuirApp')
     $scope.isActive = function(route) {
       return route === $location.path();
     };
+
+    $scope.exampleData = [
+    	{ key: "Right", y: 70 },
+      { key: "Wrong", y: 30 }
+     ];
+
+    var colorArray = ['#FFA500','#BE1E2D'];
+    $scope.colorFunction = function() {
+     return function(d, i) {
+       return colorArray[i];
+     };
+    }
+
+    $scope.yFunction = function(){
+     return function(d){
+       return d.y;
+     };
+    }
+    $scope.xFunction = function(){
+     return function(d) {
+       return d.key;
+     };
+    }
   });

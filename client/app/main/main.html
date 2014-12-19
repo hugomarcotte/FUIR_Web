@@ -24,12 +24,18 @@
     </div>
   </div>
 </div>
-<div class="container" ng-repeat="question in questions" ng-hide="!isLoggedIn()">
-  <div class="row">
+
+<div class="" ng-hide="!isLoggedIn()">
+  <ul style="margin-left: -10px; margin-top:-25px;">
+    <li style="float:left; margin-left: 7px;" ng-repeat="question in questions">
+      <question q="question"></question>
+    </li>
+  </ul>
+  <!-- <div  ng-repeat="question in questions">
     <div class="col s10 m8 l8 offset-s1 offset-m2 offset-l2">
       <question q="question"></question>
     </div>
-  </div>
+  </div> -->
 </div>
 
-<div ng-include="'components/footer/footer.html'"></div>
+<div style="clear:both" ng-include="'components/footer/footer.html'"></div>
