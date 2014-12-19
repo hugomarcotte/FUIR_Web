@@ -18,7 +18,19 @@
 
   }
 }
+
 .orangeCard {
+  background-color: #F7941E;
+}
+.redCard {
+  background-color: #BE1E2D;
+}
+.greyCard {
+  background-color: #6D6E71;
+}
+
+
+.TEMPorangeCard {
   @extend .questionCard;
 
 

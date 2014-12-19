@@ -7,7 +7,8 @@ angular.module('fuirApp')
       templateUrl: 'app/question/question.html',
       restrict: 'E',
       scope: {
-        question: '=q'
+        question: '=q',
+        qIndex: '@i'
       },
       link: function (scope, element, attrs) {
       }
