@@ -5,7 +5,7 @@
  * Fully installable fonts can be purchased at http://www.fontspring.com
  *
  * The fonts included in this stylesheet are subject to the End User License you purchased
- * from Fontspring. The fonts are protected under domestic and international trademark and 
+ * from Fontspring. The fonts are protected under domestic and international trademark and
  * copyright law. You are prohibited from modifying, reverse engineering, duplicating, or
  * distributing this font software.
  *
@@ -24,13 +24,12 @@
 
 @font-face {
     font-family: 'DharmaGothicPRegular';
-    src: url('DharmaGothicP_Regular_R-webfont.eot');
-    src: url('DharmaGothicP_Regular_R-webfont.eot?#iefix') format('embedded-opentype'),
-         url('DharmaGothicP_Regular_R-webfont.woff') format('woff'),
-         url('DharmaGothicP_Regular_R-webfont.ttf') format('truetype'),
-         url('DharmaGothicP_Regular_R-webfont.svg#DharmaGothicPRegular') format('svg');
+    src: url('../fonts/DharmaGothicP_Regular_R-webfont.eot');
+    src: url('../fonts/DharmaGothicP_Regular_R-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/DharmaGothicP_Regular_R-webfont.woff') format('woff'),
+         url('../fonts/DharmaGothicP_Regular_R-webfont.ttf') format('truetype'),
+         url('../fonts/DharmaGothicP_Regular_R-webfont.svg#DharmaGothicPRegular') format('svg');
     font-weight: normal;
     font-style: normal;
 
 }
-
