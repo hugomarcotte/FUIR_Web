@@ -6,7 +6,8 @@ angular.module('fuirApp', [
   'ngSanitize',
   'ui.router',
   'nvd3ChartDirectives',
-  'bnx.module.facebook'
+  'bnx.module.facebook',
+  'ngDialog'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     $urlRouterProvider

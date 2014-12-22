@@ -23,9 +23,23 @@ angular.module('fuirApp')
     },
 
     isLoggedIn: function() {
+      var deferred = $q.defer();
 
-      // console.log(Parse.User.current()? 'true':'false');
-      return Parse.User.current()? true:false;
+      facebook.getLoginStatus()
+      .then(function(response){
+        if (response.status === 'connected' && Parse.User.current()) {
+          deferred.resolve(true);
+        }
+        else {
+          deferred.resolve(false);
+        }
+      })
+      .catch(function(err){
+        console.log(err);
+        deferred.resolve(false);
+      });
+
+      return deferred.promise;
     },
 
     getCurrentUser: function() {
@@ -38,7 +52,13 @@ angular.module('fuirApp')
     },
 
     getId: function() {
-      return  Parse.User.current().id;
+      if(Parse.User.current()) {
+        return  Parse.User.current().id;
+      }
+      else {
+        return  '';
+      }
+
     },
 
     getName: function() {
@@ -81,21 +101,27 @@ angular.module('fuirApp')
       }
       else if(Parse.User.current()) {
 
-        facebook.api('/me/picture')
+        facebook.getLoginStatus()
         .then(function(response){
-          if (response && !response.error) {
-            pictureUrl = response.data.url;
-            deferred.resolve(pictureUrl);
-          }
-          else {
-            deferred.reject(response.error);
-          }
-        })
-        .catch(function(err){
-          console.log(err);
-          deferred.reject(err);
-        });
+          if (response.status === 'connected') {
 
+            facebook.api('/me/picture')
+            .then(function(response2){
+              if (response2 && !response2.error) {
+                pictureUrl = response2.data.url;
+                deferred.resolve(pictureUrl);
+              }
+              else {
+                deferred.reject(response.error);
+              }
+            })
+            .catch(function(err){
+              console.log(err);
+              deferred.reject(err);
+            });
+
+          }
+        });
       }
       return deferred.promise;
     }

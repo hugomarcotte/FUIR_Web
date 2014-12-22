@@ -3,26 +3,34 @@
 angular.module('fuirApp')
   .controller('NavbarCtrl', function ($scope, $location, ParseUser) {
 
-    //$scope.isCollapsed = true;
+    $scope.isLoggedIn = Parse.User.current()? true: false;
 
+    // ParseUser.isLoggedIn()
+    // .then(function(isLoggedIn){
+    //   console.log(isLoggedIn);
+    //   $scope.isLoggedIn = isLoggedIn;
+    // });
 
-    $scope.isLoggedIn = ParseUser.isLoggedIn;
 
     //$scope.isAdmin = false;
 
     $scope.getCurrentUser = false//ParseUser.getCurrentUser;
+    
 
-    ParseUser.getPictureURL()
-    .then(function(pictureURL) {
-      $scope.pictureURL = pictureURL;
-    })
-    .catch(function(err) {
-      console.log(err);
-    });
+    // ParseUser.getPictureURL()
+    // .then(function(pictureURL) {
+    //   $scope.pictureURL = pictureURL;
+    // })
+    // .catch(function(err) {
+    //   console.log(err);
+    // });
 
 
     $scope.logout = function() {
-      ParseUser.logout();
+      console.log("test");
+      //ParseUser.logout();
+      $scope.isLoggedIn = false;
+      Parse.User.logOut();
     };
 
     $scope.isActive = function(route) {

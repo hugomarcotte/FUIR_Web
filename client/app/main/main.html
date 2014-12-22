@@ -28,14 +28,40 @@
 <div>
   <ul style="margin-left: -10px; margin-top:-16px;">
     <li style="float:left; margin-left: 7px;" ng-repeat="question in questions">
-      <question q="question" i="{{$index+1}}" ></question>
+      <!-- <question q="question" i="{{$index+1}}" ></question> -->
+      <a href="#" ng-click="showCard(question)">
+        <div class="card {{getCardColor($index+1)}}" style=" margin-bottom: 5px; margin-top:0px; width: 283px; height: 200px; text-align:center;">
+          <div class="card-content">
+            <h4 style="font-size:1.4em">{{question.get("questionText")}}</h4>
+          </div>
+        </div>
+      </a>
+
     </li>
   </ul>
-  <!-- <div  ng-repeat="question in questions">
-    <div class="col s10 m8 l8 offset-s1 offset-m2 offset-l2">
-      <question q="question"></question>
+</div>
+<script type="text/ng-template" id="questionTemplate">
+<div class="row questionCard orangeCard">
+  <div class="col s12 ">
+    <h3>{{question.get("questionText")}}</h3>
+  </div>
+  <div class="col s12 ">
+    <button type="button" class="btn" style="background-color:#CD0118; margin: 5px 0px" ng-click="saveAnswer(1)">{{question.get("answer1Text")}}</button>
+    <label ng-show="question.results">{{question.results.percentAnsw1}}%</label>
+  </div>
+  <div class="col s12 ">
+    <button type="button" class="btn" style="background-color:#CD0118; margin: 5px 0px" ng-click="saveAnswer(2)">{{question.get("answer2Text")}}</button>
+    <label ng-show="question.results">{{question.results.percentAnsw2}}%</label>
+    <div ng-show="question.results">
+      <div ng-show="!question.results.inMajority">
+        Youre Wrong!
+      </div>
+      <div ng-show="question.results.inMajority">
+        Youre Right!
+      </div>
     </div>
-  </div> -->
+  </div>
 </div>
 
+</script>
 <div style="clear:both" ng-include="'components/footer/footer.html'"></div>

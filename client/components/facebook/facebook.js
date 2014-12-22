@@ -118,14 +118,6 @@ var module = angular.module ('bnx.module.facebook', [])
       });
     }
 
-    var getLoginStatus = function() {
-      return promise(function(callback){
-        FB.getLoginStatus(function(response){
-          callback(response);
-        });
-      });
-    }
-
     if (!this.initialized) {
       executeWhenInitialized (registerEventHandlers, this, []);
     } else {
@@ -140,8 +132,7 @@ var module = angular.module ('bnx.module.facebook', [])
 
       init: provider.init,
       api: api,
-      login: login,
-      getLoginStatus: getLoginStatus
+      login: login
     }
   }];
 });

@@ -7,15 +7,28 @@ angular.module('fuirApp')
       getQuestions: function () {
 
         var deferred = $q.defer();
-
-         Parse.Cloud.run('GetUnansweredQuestions', {userId: ParseUser.getId()}, {
-           success: function(results) {
-             deferred.resolve(results);
-           },
-           error: function(error) {
-             deferred.reject(error);
-           }
-         });
+         if(Parse.User.current()) {
+           Parse.Cloud.run('GetUnansweredQuestions', {userId: Parse.User.current().id}, {
+             success: function(results) {
+               console.log('showing unanswered');
+               deferred.resolve(results);
+             },
+             error: function(error) {
+               deferred.reject(error);
+             }
+           });
+         }
+         else {
+           Parse.Cloud.run('GetTopQuesions', {dayRange:"60"}, {
+             success: function(results) {
+               console.log('showing top questions');
+               deferred.resolve(results);
+             },
+             error: function(error) {
+               deferred.reject(error);
+             }
+           });
+         }
 
          return deferred.promise;
       },

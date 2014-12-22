@@ -1,23 +1,39 @@
-/* .thing-form {
-    margin: 20px 0;
+.ngdialog.ngdialog-theme-default .ngdialog-content {
+  border-radius: 0px;
+  width: 675px;
+  -webkit-box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2), 0 40px 77px 0 rgba(0, 0, 0, 0.22);
+  -moz-box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2), 0 40px 77px 0 rgba(0, 0, 0, 0.22);
+  box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2), 0 40px 77px 0 rgba(0, 0, 0, 0.22);
+
 }
 
-#banner {
-    border-bottom: none;
-    margin-top: -20px;
+.questionCard {
+  color: #212121;
+  text-align: center;
+  h4 {
+    font-size: 1.75em
+  }
+  img {
+    height: 10em;
+  }
+
+  a {
+    font-size: 1.2em;
+    vertical-align: center;
+    height: 75%;
+    width: 65%;
+    color: #212121;
+    min-height: 75px;
+
+  }
 }
 
-#banner h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
+.orangeCard {
+  background-color: #F7941E;
 }
-
-.hero-unit {
-    position: relative;
-    padding: 30px 15px;
-    color: #F5F5F5;
-    text-align: center;
-    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-    background: #4393B9;
-} */
+.redCard {
+  background-color: #BE1E2D;
+}
+.greyCard {
+  background-color: #6D6E71;
+}
