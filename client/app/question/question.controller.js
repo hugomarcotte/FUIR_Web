@@ -5,6 +5,7 @@ angular.module('fuirApp')
 
 
     $scope.question = $scope.ngDialogData.question;
+    $scope.question.answered = $scope.ngDialogData.questionAnswered;
 
     $scope.getCardColor = function(qIndex) {
       if (qIndex % 3 === 0) { return 'orangeCard'; }
@@ -14,14 +15,9 @@ angular.module('fuirApp')
 
     $scope.saveAnswer = function(answerIndex) {
 
-      console.log('saving');
       // Save answer
       Question.saveAnswer($scope.question.id, answerIndex)
       .then(function(newAnswer){
-
-        console.log('new answer');
-        console.log(newAnswer);
-
 
         // Get question with new count values
         Question.getQuestion($scope.question.id)
@@ -37,8 +33,8 @@ angular.module('fuirApp')
                 percentAnsw2: Math.floor((question.get('countAnswer2') / question.get('totalAnswerCount')) * 100)
           };
 
-          console.log('question');
-          console.log($scope.question.results);
+          $scope.question.answered = true;
+
         })
         .catch(function(err){
           console.log(err);

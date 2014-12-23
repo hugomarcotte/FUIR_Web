@@ -1,38 +1,21 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
-<!-- <div class="container" style="text-align:center;" ng-hide="isLoggedIn()">
-  <div class="row" style="padding-bottom:25px;">
-    <div class="col-lg-12">
-      <img src="assets/images/title.png" alt="F.U. I'M RIGHT">
-    </div>
-  </div>
-  <div class="row" style="padding-bottom:25px;">
-    <div class="col-lg-12">
-      <img src="assets/images/question_guy_red.png" alt="Logo">
-    </div>
-  </div>
-  <div class="row" style="padding-bottom:25px;">
-    <div class="col-lg-12">
-      <img src="assets/images/slogan.png" alt="ASK. ANSWER. GLOAT.">
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-lg-12 appStoreLogo">
-      <a href="https://itunes.apple.com/app/id920877615?mt=8">
-        <img src="assets/images/AppStoreLogo.png" alt="AppStore">
-      </a>
-    </div>
-  </div>
-</div> -->
-
 <div>
   <ul style="margin-left: -10px; margin-top:-16px;">
     <li style="float:left; margin-left: 7px;" ng-repeat="question in questions">
-      <!-- <question q="question" i="{{$index+1}}" ></question> -->
-      <a href="#" ng-click="showCard(question)">
+
+      <a href="#" ng-click="showCard(question, $index+1)">
         <div class="card {{getCardColor($index+1)}}" style=" margin-bottom: 5px; margin-top:0px; width: 283px; height: 200px; text-align:center;">
           <div class="card-content">
             <h4 style="font-size:1.4em">{{question.get("questionText")}}</h4>
+            <div ng-show="question.results">
+              <div ng-show="!question.results.inMajority">
+                Youre Wrong!
+              </div>
+              <div ng-show="question.results.inMajority">
+                Youre Right!
+              </div>
+            </div>
           </div>
         </div>
       </a>
@@ -41,24 +24,25 @@
   </ul>
 </div>
 <script type="text/ng-template" id="questionTemplate">
-<div class="row questionCard orangeCard">
-  <div class="col s12 ">
-    <h3>{{question.get("questionText")}}</h3>
+<div class="questionCard" md-theme="altTheme">
+  <div class="questionText">
+    {{question.get("questionText")}}
   </div>
-  <div class="col s12 ">
-    <button type="button" class="btn" style="background-color:#CD0118; margin: 5px 0px" ng-click="saveAnswer(1)">{{question.get("answer1Text")}}</button>
-    <label ng-show="question.results">{{question.results.percentAnsw1}}%</label>
+  <img class="logo" src="assets/images/question_guy_red.png" alt="Logo">
+  <div style="margin-top:250px;">
+    <md-button href="#" class="md-raised" ng-disabled="question.results" ng-click="saveAnswer(1)">{{question.get("answer1Text")}}</md-button>
+    <label style="font-size:2.8em" ng-show="question.results">{{question.results.percentAnsw1}}%</label>
   </div>
-  <div class="col s12 ">
-    <button type="button" class="btn" style="background-color:#CD0118; margin: 5px 0px" ng-click="saveAnswer(2)">{{question.get("answer2Text")}}</button>
-    <label ng-show="question.results">{{question.results.percentAnsw2}}%</label>
-    <div ng-show="question.results">
-      <div ng-show="!question.results.inMajority">
-        Youre Wrong!
-      </div>
-      <div ng-show="question.results.inMajority">
-        Youre Right!
-      </div>
+  <div>
+    <md-button href="#" class="md-raised" ng-disabled="question.results" ng-click="saveAnswer(2)">{{question.get("answer2Text")}}</md-button>
+    <label style="font-size:2.8em" ng-show="question.results">{{question.results.percentAnsw2}}%</label>
+  </div>
+  <div ng-show="question.results">
+    <div ng-show="!question.results.inMajority">
+      Youre Wrong!
+    </div>
+    <div ng-show="question.results.inMajority">
+      Youre Right!
     </div>
   </div>
 </div>

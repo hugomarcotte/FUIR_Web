@@ -13,16 +13,19 @@ angular.module('fuirApp')
     });
 
     $scope.getCardColor = function(qIndex) {
-      if (qIndex % 3 === 0) { return 'orangeCard'; }
-      else if(qIndex % 3 === 1) { return 'redCard'; }
-      else if(qIndex % 3 === 2) { return 'greyCard'; }
+      if (qIndex % 4 === 0) { return 'orangeCard'; }
+      else if(qIndex % 4 === 1) { return 'redCard'; }
+      else if(qIndex % 4 === 2) { return 'darkOrangeCard'; }
+      else if(qIndex % 4 === 3) { return 'greyCard'; }
     };
 
-    $scope.showCard = function (question) {
+    $scope.showCard = function (question, qIndex) {
+      var cardColorClass = 'big'+ $scope.getCardColor(qIndex);
       ngDialog.open({
         template: 'questionTemplate',
         controller: 'QuestionCtrl',
-        data: {question: question}
+        data: {question: question},
+        className: 'ngdialog-theme-default '+cardColorClass
       });
     };
 

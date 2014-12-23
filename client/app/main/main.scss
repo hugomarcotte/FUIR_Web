@@ -1,30 +1,95 @@
 .ngdialog.ngdialog-theme-default .ngdialog-content {
-  border-radius: 0px;
-  width: 675px;
+  width: 500;
+  height: 600px;
+  margin-top: -100px;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
   -webkit-box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2), 0 40px 77px 0 rgba(0, 0, 0, 0.22);
   -moz-box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2), 0 40px 77px 0 rgba(0, 0, 0, 0.22);
   box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2), 0 40px 77px 0 rgba(0, 0, 0, 0.22);
+  font-family: 'DharmaGothicPRegular',  sans-serif;
+  background-image:url("assets/images/question_guy_red.png");
+}
 
+.ngdialog.ngdialog-theme-default .ngdialog-close:before {
+  color: #212121;
+  font-family: 'DharmaGothicPRegular',  sans-serif;
+  font-size: 2em;
+}
+
+.ngdialog.ngdialog-theme-default.bigorangeCard .ngdialog-content {
+  background-color: #F7941E;
+}
+.ngdialog.ngdialog-theme-default.bigredCard .ngdialog-content {
+  background-color: #BE1E2D;
+}
+.ngdialog.ngdialog-theme-default.biggreyCard .ngdialog-content {
+  background-color: #6D6E71;
+}
+.ngdialog.ngdialog-theme-default.bigdarkOrangeCard .ngdialog-content {
+  background-color: #D96C24;
+}
+
+.ngdialog-overlay {
+  background:none;
 }
 
 .questionCard {
   color: #212121;
   text-align: center;
-  h4 {
-    font-size: 1.75em
+  font-size: 1.5em;
+  .md-button {
+    display: inline-block; //for width and height to work
+    margin-top: 10px;
+    width: 300px;
+    min-height: 65px;
+    text-transform:none;
+    font-size: 0.7em;
+    span {
+      white-space: initial;
+    }
   }
   img {
-    height: 10em;
+    width: 215px;
+    height:auto;
+    float:left;
+    margin-top: 35px;
   }
 
-  a {
-    font-size: 1.2em;
-    vertical-align: center;
-    height: 75%;
-    width: 65%;
-    color: #212121;
-    min-height: 75px;
+}
 
+
+
+.bigorangeCard {
+  .questionCard {
+    .md-button{
+      background-color: #BE1E2D;
+    }
+  }
+}
+
+.bigredCard {
+  .questionCard {
+    .md-button{
+      background-color: #6D6E71;
+    }
+  }
+}
+
+.biggreyCard {
+  .questionCard {
+    .md-button{
+      background-color: #D96C24;
+    }
+  }
+}
+
+.bigdarkOrangeCard {
+  .questionCard {
+    .md-button{
+      background-color: #F7941E;
+    }
   }
 }
 
@@ -36,4 +101,7 @@
 }
 .greyCard {
   background-color: #6D6E71;
+}
+.darkOrangeCard {
+  background-color: #D96C24;
 }
