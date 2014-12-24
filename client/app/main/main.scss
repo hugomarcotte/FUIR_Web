@@ -1,3 +1,4 @@
+// Dialog for big question card
 .ngdialog.ngdialog-theme-default .ngdialog-content {
   width: 500;
   height: 600px;
@@ -9,12 +10,12 @@
   -moz-box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2), 0 40px 77px 0 rgba(0, 0, 0, 0.22);
   box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2), 0 40px 77px 0 rgba(0, 0, 0, 0.22);
   font-family: 'DharmaGothicPRegular',  sans-serif;
-  background-image:url("assets/images/question_guy_red.png");
+  padding: 0.5em 0.5em;
 }
 
 .ngdialog.ngdialog-theme-default .ngdialog-close:before {
   color: #212121;
-  font-family: 'DharmaGothicPRegular',  sans-serif;
+  font-family: 'jonze',  sans-serif;
   font-size: 2em;
 }
 
@@ -35,10 +36,13 @@
   background:none;
 }
 
+
+// Big question card
 .questionCard {
   color: #212121;
   text-align: center;
   font-size: 1.5em;
+  height: 100%;
   .md-button {
     display: inline-block; //for width and height to work
     margin-top: 10px;
@@ -50,16 +54,66 @@
       white-space: initial;
     }
   }
-  img {
+  .FUguy {
     width: 215px;
-    height:auto;
-    float:left;
-    margin-top: 35px;
+    position: absolute;
+    left: 5%;
+  }
+  .stamp {
+    width: 130px;
+    position: absolute;
+    left: 65%;
   }
 
+  .questionText {
+    height:30%;
+    div {
+      height:100%;
+      width: 100%;
+      display:table;
+      span {
+        display:table-cell;
+        vertical-align:middle;
+      }
+    }
+  }
+
+  .questionAnswers {
+    width: 100%;
+    height: 60%;
+    display: table;
+
+    .buttons {
+      display: table-cell;
+      vertical-align: bottom;
+    }
+  }
+
+  .footer {
+    font-family: 'jonze',  sans-serif;
+    font-size: 0.7em;
+    width: 100%;
+    height: 10%;
+    display: table;
+    .response {
+      text-align:left;
+      display: table-cell;
+      vertical-align: bottom;
+      padding-left: 20px;
+    }
+    .shareHeart {
+      text-align:right;
+      display: table-cell;
+      vertical-align: bottom;
+      img {
+        margin-left: 20px;
+        vertical-align: bottom;
+        height: 45px;
+      }
+    }
+
+  }
 }
-
-
 
 .bigorangeCard {
   .questionCard {
@@ -93,6 +147,7 @@
   }
 }
 
+// Small question cards
 .orangeCard {
   background-color: #F7941E;
 }
@@ -104,4 +159,21 @@
 }
 .darkOrangeCard {
   background-color: #D96C24;
+}
+
+.smallCard {
+  margin-bottom: 5px;
+  margin-top:0px;
+  width: 283px;
+  height: 200px;
+  text-align:center;
+  padding: 10px;
+  line-height: 1.2;
+  display: table;
+
+  .questionText {
+    font-size: 1.3em;
+    display: table-cell;
+    vertical-align: middle;
+  }
 }

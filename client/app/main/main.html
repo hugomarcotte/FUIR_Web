@@ -5,16 +5,15 @@
     <li style="float:left; margin-left: 7px;" ng-repeat="question in questions">
 
       <a href="#" ng-click="showCard(question, $index+1)">
-        <div class="card {{getCardColor($index+1)}}" style=" margin-bottom: 5px; margin-top:0px; width: 283px; height: 200px; text-align:center;">
-          <div class="card-content">
-            <h4 style="font-size:1.4em">{{question.get("questionText")}}</h4>
-            <div ng-show="question.results">
-              <div ng-show="!question.results.inMajority">
-                Youre Wrong!
-              </div>
-              <div ng-show="question.results.inMajority">
-                Youre Right!
-              </div>
+        <div class="smallCard {{getCardColor($index+1)}}">
+
+          <span class="questionText">{{question.get("questionText")}}</span>
+          <div ng-show="question.results">
+            <div ng-show="!question.results.inMajority">
+              Youre Wrong!
+            </div>
+            <div ng-show="question.results.inMajority">
+              Youre Right!
             </div>
           </div>
         </div>
@@ -26,26 +25,35 @@
 <script type="text/ng-template" id="questionTemplate">
 <div class="questionCard" md-theme="altTheme">
   <div class="questionText">
-    {{question.get("questionText")}}
-  </div>
-  <img class="logo" src="assets/images/question_guy_red.png" alt="Logo">
-  <div style="margin-top:250px;">
-    <md-button href="#" class="md-raised" ng-disabled="question.results" ng-click="saveAnswer(1)">{{question.get("answer1Text")}}</md-button>
-    <label style="font-size:2.8em" ng-show="question.results">{{question.results.percentAnsw1}}%</label>
-  </div>
-  <div>
-    <md-button href="#" class="md-raised" ng-disabled="question.results" ng-click="saveAnswer(2)">{{question.get("answer2Text")}}</md-button>
-    <label style="font-size:2.8em" ng-show="question.results">{{question.results.percentAnsw2}}%</label>
-  </div>
-  <div ng-show="question.results">
-    <div ng-show="!question.results.inMajority">
-      Youre Wrong!
+    <div>
+      <span>{{question.get("questionText")}}</span>
     </div>
-    <div ng-show="question.results.inMajority">
-      Youre Right!
+  </div>
+  <img class="FUguy" src="{{randomGuy}}" alt="FU guy">
+  <img class="stamp" src="assets/images/wrongStamp.png" ng-show="question.results && !question.results.inMajority" alt="You're wrong">
+  <img class="stamp" src="assets/images/rightStamp.png" ng-show="question.results && question.results.inMajority" alt="You're right">
+  <div class="questionAnswers">
+    <div class= "buttons">
+      <div>
+        <md-button href="#" class="md-raised" ng-disabled="question.results" ng-click="saveAnswer(1)">{{question.get("answer1Text")}}</md-button>
+        <label style="font-size:2.8em" ng-show="question.results">{{question.results.percentAnsw1}}%</label>
+      </div>
+      <div>
+        <md-button href="#" class="md-raised" ng-disabled="question.results" ng-click="saveAnswer(2)">{{question.get("answer2Text")}}</md-button>
+        <label style="font-size:2.8em" ng-show="question.results">{{question.results.percentAnsw2}}%</label>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="response">
+      {{question.get("totalAnswerCount")}} responses
+    </div>
+    <div class="shareHeart">
+      <img src="assets/images/heart.png" alt="Favorite">
+      <!-- <img src="assets/images/heart_filled.png" alt="Favorite"> -->
+      <img src="assets/images/share.png" alt="Share">
     </div>
   </div>
 </div>
-
 </script>
 <div style="clear:both" ng-include="'components/footer/footer.html'"></div>

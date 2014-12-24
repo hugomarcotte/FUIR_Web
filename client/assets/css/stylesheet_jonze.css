@@ -1,0 +1,10 @@
+@font-face {
+  font-family: 'jonze';
+  src: url('../fonts/jonze.eot');
+  src: url('../fonts/jonze.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/jonze.woff') format('woff'),
+  url('../fonts/jonze.ttf.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
