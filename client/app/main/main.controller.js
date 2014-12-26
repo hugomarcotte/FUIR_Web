@@ -19,16 +19,9 @@ angular.module('fuirApp')
       //else if(qIndex % 4 === 3) { return 'redCard'; }
     };
 
-    $scope.getRandomGuy = function(cardColor) {
-
-      var num = Math.floor(Math.random() * 8) + 1,
-          color;
-
-      if (cardColor === 'orangeCard') { color = 'red'; }
-      else if(cardColor === 'greyCard') { color = 'darkorange'; }
-      else if(cardColor === 'darkOrangeCard') { color = 'orange'; }
-
-      return 'assets/images/dude_'+num+'_'+color+'.png'
+    $scope.getRandomGuyNumber = function() {
+      var num = Math.floor(Math.random() * 8) + 1;
+      return num;
     };
 
     $scope.showCard = function (question, qIndex) {
@@ -36,7 +29,7 @@ angular.module('fuirApp')
       ngDialog.open({
         template: 'questionTemplate',
         controller: 'QuestionCtrl',
-        data: {question: question, randomGuy: $scope.getRandomGuy($scope.getCardColor(qIndex))},
+        data: {question: question, randomGuyNumber: $scope.getRandomGuyNumber(), cardColor: $scope.getCardColor(qIndex)},
         className: 'ngdialog-theme-default '+cardColorClass
       });
     };

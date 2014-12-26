@@ -3,11 +3,28 @@
 angular.module('fuirApp')
   .controller('QuestionCtrl', function ($scope, Question) {
 
-    $scope.cardColor = $scope.ngDialogData.cardColor;
-    $scope.question = $scope.ngDialogData.question;
-    $scope.randomGuy = $scope.ngDialogData.randomGuy;
 
-    console.log($scope.question);
+    $scope.question = $scope.ngDialogData.question;
+    //$scope.randomGuy = $scope.ngDialogData.randomGuy;
+    $scope.randomGuyNumber = $scope.ngDialogData.randomGuyNumber;
+    $scope.cardColor = $scope.ngDialogData.cardColor;
+
+
+    $scope.getRandomGuy = function(num, color) {
+      
+      if(num === $scope.randomGuyNumber && $scope.cardColor === 'orangeCard' && color === 'red') {
+        return true;
+      }
+      else if(num === $scope.randomGuyNumber && $scope.cardColor === 'greyCard' && color === 'darkorange') {
+        return true;
+      }
+      else if(num === $scope.randomGuyNumber && $scope.cardColor === 'darkOrangeCard' && color === 'orange') {
+        return true;
+      }
+
+      return false;
+    };
+
     $scope.saveAnswer = function(answerIndex) {
 
       // Save answer
