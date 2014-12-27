@@ -13,10 +13,10 @@ angular.module('fuirApp')
     });
 
     $scope.getCardColor = function(qIndex) {
-      if (qIndex % 3 === 0) { return 'orangeCard'; }
-      else if(qIndex % 3 === 1) { return 'greyCard'; }
-      else if(qIndex % 3 === 2) { return 'darkOrangeCard'; }
-      //else if(qIndex % 4 === 3) { return 'redCard'; }
+      if (qIndex % 4 === 0) { return 'orangeCard'; }
+      else if(qIndex % 4 === 1) { return 'greyCard'; }
+      else if(qIndex % 4 === 2) { return 'darkOrangeCard'; }
+      else if(qIndex % 4 === 3) { return 'redCard'; }
     };
 
     $scope.getRandomGuyNumber = function() {

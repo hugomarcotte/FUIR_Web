@@ -11,7 +11,7 @@ angular.module('fuirApp')
 
 
     $scope.getRandomGuy = function(num, color) {
-      
+
       if(num === $scope.randomGuyNumber && $scope.cardColor === 'orangeCard' && color === 'red') {
         return true;
       }
@@ -19,6 +19,9 @@ angular.module('fuirApp')
         return true;
       }
       else if(num === $scope.randomGuyNumber && $scope.cardColor === 'darkOrangeCard' && color === 'orange') {
+        return true;
+      }
+      else if(num === $scope.randomGuyNumber && $scope.cardColor === 'redCard' && color === 'grey') {
         return true;
       }
 
@@ -35,14 +38,12 @@ angular.module('fuirApp')
         Question.getQuestion($scope.question.id)
         .then(function(question){
 
-          console.log('question');
-          console.log(question);
-
           // Add results to question in scope
           $scope.question.results = {
                 inMajority: newAnswer.get('inMajority'),
                 percentAnsw1: Math.ceil((question.get('countAnswer1') / question.get('totalAnswerCount')) * 100),
-                percentAnsw2: Math.floor((question.get('countAnswer2') / question.get('totalAnswerCount')) * 100)
+                percentAnsw2: Math.floor((question.get('countAnswer2') / question.get('totalAnswerCount')) * 100),
+                totalAnswerCount: question.get('totalAnswerCount')
           };
 
           $scope.question.answered = true;

@@ -63,13 +63,13 @@ angular.module('fuirApp')
 
           // Calculate if in majority
           var inMajority = true;
-          if(answerIndex === 1) {
+          if(answerIndex === 0) {
             countAnswer1++;
             if(countAnswer1 < countAnswer2) {
               inMajority = false;
             }
           }
-          else if(answerIndex === 2) {
+          else if(answerIndex === 1) {
             countAnswer2++;
             if(countAnswer2 < countAnswer1) {
               inMajority = false;
