@@ -4,7 +4,7 @@
   <ul style="margin-left: -10px; margin-top:-16px;">
     <li style="float:left; margin-left: 7px;" ng-repeat="question in questions">
 
-      <a href="#" ng-click="showCard(question, $index+1)">
+      <a href="" ng-click="openQuestionCard(question, $index+1)">
         <div class="smallCard {{getCardColor($index+1)}}">
           <span class="questionText">{{question.get("questionText")}}</span>
           <!-- <img class="smallStamp" src="assets/images/wrongStamp.png" ng-show="question.results && !question.results.inMajority" alt="You're wrong">
