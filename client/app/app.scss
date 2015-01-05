@@ -8,6 +8,8 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
  * App-wide Styles
  */
 
+
+
 .browsehappy {
     margin: 0.2em 0;
     background: #ccc;
@@ -37,92 +39,58 @@ body {
 
 }
 
-// NAVBAR
-///////////////////
-// Height of nav bar
-@media only screen and (min-width: 600px) {
-  nav, nav .nav-wrapper i, nav a.button-collapse i {
-    height: 100px;
-    line-height: 100px;
-  }
-}
-
 .navFUIR {
+
   font-family: 'jonze',  sans-serif;
   color: #212121;
 
-  .logo {
-    height: 90px;
-    width:auto;
-    display: inline-block;
-    vertical-align:middle;
-    margin-right: 15px;
-  }
-
-  .dropdown-content {
-    padding: 0px 0px;
-    a {
-      font-size: 1.5em;
-      padding: 0px 9px;
-    }
-    li {
-      padding: 0 0;
-      width: 100%;
-    }
-  }
-
-  a {
+  md-toolbar {
+    height: 100px;
+    line-height: 100px;
+    background-color: #BDBDBD;
     color: #212121;
+  }
+  .md-toolbar-tools {
+    font-size: 2em;
+    min-height: 100px;
+  }
+
+  .logo {
+    height: 90%;
+    width:auto;
+  }
+
+}
+
+.footerFUIR {
+  font-family: 'jonze',  sans-serif;
+  color: #212121;
+  background-color: #BDBDBD;
+  padding: 0 10px;
+
+  .copyright {
+    padding-bottom: 8px;
+    margin-top: 8px;
+    font-size: .75em;
+  }
+
+  .appStoreLogo {
+    img {
+      height: 51px;
+      width:auto;
+    }
+  }
+  a {
     text-decoration: none;
   }
-
-  .pic {
-    height: 35px;
-    width:auto;
-    display: inline-block;
-    vertical-align:middle;
-  }
-
-}
-
-.brand-logo {
-  height: 100%;
-  span {
-    font-size: 2em;
-    float:right;
-  }
-}
-
-.footer-copyright {
-  font-size: .75em;
-  margin: 0px;
-  a {
-    margin-left: 15px;
-  }
-}
-
-.appStoreLogo {
-  img {
-    height: 51px;
-    width:auto;
-  }
-}
-
-.footerText {
-
-}
-
-.footFUIR {
-
-  h3 {
-    font-family: 'jonze',  sans-serif;
-    margin-bottom: 0px;
-  }
   p {
-    margin-top: 0px;
-    margin-bottom: 10px;
+    font-family: 'DharmaGothicPRegular',  sans-serif;
+  }
+  .content {
+    margin-right: 20px;
   }
 }
+
 
 // Component styles are injected through grunt
 // injector

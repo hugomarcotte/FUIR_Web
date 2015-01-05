@@ -1,19 +1,26 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
-<div class="questionList">
-  <ul style="margin-left: -10px; margin-top:-16px;">
-    <li style="float:left; margin-left: 7px;" ng-repeat="question in questions">
 
-      <a href="" ng-click="openQuestionCard(question, $index+1)">
-        <div class="smallCard {{getCardColor($index+1)}}">
-          <span class="questionText">{{question.get("questionText")}}</span>
-          <!-- <img class="smallStamp" src="assets/images/wrongStamp.png" ng-show="question.results && !question.results.inMajority" alt="You're wrong">
-          <img class="smallStamp" src="assets/images/rightStamp.png" ng-show="question.results && question.results.inMajority" alt="You're right"> -->
-        </div>
+<div class="questionList">
+
+  <a class="smallCardOut" href="" ng-click="openQuestionCard(question, $index+1)"  ng-repeat="question in questions">
+    <div class="smallCard {{getCardColor($index+1)}}">
+      <span class="questionText">{{question.get("questionText")}}</span>
+      <!-- <img class="smallStamp" src="assets/images/wrongStamp.png" ng-show="question.results && !question.results.inMajority" alt="You're wrong">
+      <img class="smallStamp" src="assets/images/rightStamp.png" ng-show="question.results && question.results.inMajority" alt="You're right"> -->
+    </div>
+  </a>
+  <!-- <ul style="list-style:none">
+    <li class="smallCard {{getCardColor(\$index+1)}}" ng-repeat="question in questions">
+
+      <a href="" ng-click="openQuestionCard(question, \$index+1)">
+        <span class="questionText">{{question.get("questionText")}}</span>
+        <img class="smallStamp" src="assets/images/wrongStamp.png" ng-show="question.results && !question.results.inMajority" alt="You're wrong">
+        <img class="smallStamp" src="assets/images/rightStamp.png" ng-show="question.results && question.results.inMajority" alt="You're right">
       </a>
 
     </li>
-  </ul>
+  </ul> -->
 </div>
 <script type="text/ng-template" id="questionTemplate">
 <div class="questionCard" md-theme="altTheme">
@@ -59,11 +66,11 @@
   <div class="questionAnswers">
     <div class= "buttons">
       <div>
-        <md-button href="#" class="md-raised" ng-disabled="question.results" ng-click="saveAnswer(0)">{{question.get("answer1Text")}}</md-button>
+        <md-button href="#" class="md-raised" ng-disabled="question.results" ng-click="question.results || saveAnswer(0)">{{question.get("answer1Text")}}</md-button>
         <span class="results" ng-show="question.results">{{question.results.percentAnsw1}}%</span>
       </div>
       <div>
-        <md-button href="#" class="md-raised" ng-disabled="question.results" ng-click="saveAnswer(1)">{{question.get("answer2Text")}}</md-button>
+        <md-button href="#" class="md-raised" ng-disabled="question.results" ng-click="question.results || saveAnswer(1)">{{question.get("answer2Text")}}</md-button>
         <span class="results" ng-show="question.results">{{question.results.percentAnsw2}}%</span>
       </div>
     </div>

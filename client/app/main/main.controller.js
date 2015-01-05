@@ -5,7 +5,6 @@ angular.module('fuirApp')
     $scope.questionIndex = 1;
     $scope.openFlag = false;
 
-
     if(!$scope.questions) {
 
       Question.getQuestions()
