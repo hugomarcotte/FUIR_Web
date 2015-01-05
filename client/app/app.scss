@@ -76,7 +76,7 @@ body {
 
   .appStoreLogo {
     img {
-      height: 51px;
+      height: 55px;
       width:auto;
     }
   }
@@ -88,6 +88,9 @@ body {
   }
   .content {
     margin-right: 20px;
+    h3 {
+      margin-bottom: inherit;
+    }
   }
 }
 
