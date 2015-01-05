@@ -29,21 +29,29 @@ angular.module('fuirApp')
 
     $scope.$on('$locationChangeSuccess',function(event, next, current) {
 
-      // If back button is pressed get question from URL params
-      if(!$scope.openFlag) {
-        var questionId = next.slice(next.indexOf('?qId=')+5);
-        for(var i =0; i < $scope.questions.length; i++) {
-          if($scope.questions[i].id === questionId) {
-            $scope.qIndex = i+1;
-            $scope.question = $scope.questions[i]
+      // if no qId in query string (privacy, terms...)
+      if(next.indexOf('?qId=') !== -1) {
+
+        // If back button is pressed get question from URL params
+        if(!$scope.openFlag) {
+          var questionId = next.slice(next.indexOf('?qId=')+5);
+          for(var i =0; i < $scope.questions.length; i++) {
+            if($scope.questions[i].id === questionId) {
+              $scope.qIndex = i+1;
+              $scope.question = $scope.questions[i]
+            }
           }
         }
+        else {
+          $scope.openFlag = false;
+        }
+
+        $scope.showCard();
       }
       else {
-        $scope.openFlag = false;
+        ngDialog.closeAll();
       }
 
-      $scope.showCard();
     });
 
     $scope.getCardColor = function(qIndex) {
