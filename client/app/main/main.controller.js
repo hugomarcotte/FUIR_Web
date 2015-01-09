@@ -11,15 +11,39 @@ angular.module('fuirApp')
       .then(function(questions){
 
         $scope.questions = questions;
+        var qId = $stateParams.qId
 
-        if($stateParams.qId) {
+        if(qId) {
+          var found = false;
           for(var i =0; i < $scope.questions.length; i++) {
             if($scope.questions[i].id === $stateParams.qId) {
               $scope.qIndex = i+1;
               $scope.question = $scope.questions[i];
               $scope.showCard();
+              found = true;
             }
           }
+
+          // Load question from backend
+          if(!found) {
+
+            Question.getQuestion(qId)
+            .then (function(question) {
+              $scope.question = question;
+
+              // to avoid having 31 questions
+              $scope.questions.pop();
+              $scope.questions.push(question);
+
+              $scope.qIndex = $scope.questions.length;
+              $scope.showCard();
+              found = true;
+            })
+            .catch(function(err) {
+              console.log('Cannot get question: ' +err)
+            });
+          }
+
         }
       })
       .catch(function(err) {

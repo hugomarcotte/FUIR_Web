@@ -1,5 +1,78 @@
+
+
+@-webkit-keyframes ngdialog-flipin-horizontal {
+  0% {
+    opacity: 0;
+    -webkit-transform: rotateY(-90deg);
+    transform: rotateY(-90deg);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+}
+
+@keyframes ngdialog-flipin-horizontal {
+  0% {
+    opacity: 0;
+    -webkit-transform: rotateY(-90deg);
+    -ms-transform: rotateY(-90deg);
+    transform: rotateY(-90deg);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+}
+
+@-webkit-keyframes ngdialog-flipout-horizontal {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: rotateY(90deg);
+    transform: rotateY(90deg);
+  }
+}
+
+@keyframes ngdialog-flipout-horizontal {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: rotateY(90deg);
+    -ms-transform: rotateY(90deg);
+    transform: rotateY(90deg);
+  }
+}
+
+
+//
 // Dialog for big question card
+//
+
+.ngdialog.ngdialog-theme-default.ngdialog-closing .ngdialog-content {
+  /* -webkit-animation: ngdialog-flipout-horizontal .5s;
+  animation: ngdialog-flipout-horizontal .5s; */
+}
+
 .ngdialog.ngdialog-theme-default .ngdialog-content {
+  /* -webkit-animation: ngdialog-flipin-horizontal .5s;
+  animation: ngdialog-flipin-horizontal .5s; */
   width: 450px;
   height: 600px;
   margin-top: -100px;
@@ -36,7 +109,12 @@
   /* background:none; */
 }
 
+
+
+//
 // Big question card
+//
+
 .questionCard {
   font-family: 'DharmaGothicPRegular',  sans-serif;
   color: #212121;
@@ -157,7 +235,11 @@
   }
 }
 
+
+//
 // Small question cards
+//
+
 .questionList {
 
   margin: 3px -3px;

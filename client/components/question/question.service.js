@@ -19,7 +19,7 @@ angular.module('fuirApp')
            });
          }
          else {
-           Parse.Cloud.run('GetTopQuesions', {dayRange:"60"}, {
+           Parse.Cloud.run('GetTopQuesions', {dayRange:"0"}, {
              success: function(results) {
                console.log('showing top questions');
                deferred.resolve(results);
