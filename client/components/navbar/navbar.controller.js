@@ -14,8 +14,8 @@ angular.module('fuirApp')
 
     //$scope.isAdmin = false;
 
-    $scope.getCurrentUser = false//ParseUser.getCurrentUser;
-    
+    $scope.getCurrentUser = false;//ParseUser.getCurrentUser;
+
 
     // ParseUser.getPictureURL()
     // .then(function(pictureURL) {
@@ -27,7 +27,6 @@ angular.module('fuirApp')
 
 
     $scope.logout = function() {
-      console.log("test");
       //ParseUser.logout();
       $scope.isLoggedIn = false;
       Parse.User.logOut();
@@ -37,26 +36,26 @@ angular.module('fuirApp')
       return route === $location.path();
     };
 
-    $scope.exampleData = [
-    	{ key: "Right", y: 70 },
-      { key: "Wrong", y: 30 }
-     ];
-
-    var colorArray = ['#FFA500','#BE1E2D'];
-    $scope.colorFunction = function() {
-     return function(d, i) {
-       return colorArray[i];
-     };
-    }
-
-    $scope.yFunction = function(){
-     return function(d){
-       return d.y;
-     };
-    }
-    $scope.xFunction = function(){
-     return function(d) {
-       return d.key;
-     };
-    }
+    // $scope.exampleData = [
+    // 	{ key: "Right", y: 70 },
+    //   { key: "Wrong", y: 30 }
+    //  ];
+    //
+    // var colorArray = ['#FFA500','#BE1E2D'];
+    // $scope.colorFunction = function() {
+    //  return function(d, i) {
+    //    return colorArray[i];
+    //  };
+    // }
+    //
+    // $scope.yFunction = function(){
+    //  return function(d){
+    //    return d.y;
+    //  };
+    // }
+    // $scope.xFunction = function(){
+    //  return function(d) {
+    //    return d.key;
+    //  };
+    // }
   });
