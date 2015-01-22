@@ -75,7 +75,7 @@ angular.module('fuirApp')
       .catch(function(err){
         console.log(err);
       });
-
+    
     };
 
   });

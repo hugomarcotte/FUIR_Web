@@ -9,25 +9,18 @@
       <img class="smallStamp" src="assets/images/rightStamp.png" ng-show="question.results && question.results.inMajority" alt="You're right"> -->
     </div>
   </a>
-  <!-- <ul style="list-style:none">
-    <li class="smallCard {{getCardColor(\$index+1)}}" ng-repeat="question in questions">
-
-      <a href="" ng-click="openQuestionCard(question, \$index+1)">
-        <span class="questionText">{{question.get("questionText")}}</span>
-        <img class="smallStamp" src="assets/images/wrongStamp.png" ng-show="question.results && !question.results.inMajority" alt="You're wrong">
-        <img class="smallStamp" src="assets/images/rightStamp.png" ng-show="question.results && question.results.inMajority" alt="You're right">
-      </a>
-
-    </li>
-  </ul> -->
 </div>
 <script type="text/ng-template" id="questionTemplate">
 <div class="questionCard" md-theme="altTheme">
-  <div class="questionText">
-    <div>
-      <span>{{question.get("questionText")}}</span>
+
+  <div class="footer" style="height: 16%;">
+    <div class="shareHeart">
+      <!-- <img src="assets/images/heart.png" alt="Favorite"> -->
+      <!-- <img src="assets/images/heart_filled.png" alt="Favorite"> -->
+      <img src="assets/images/share.png" alt="Share">
     </div>
   </div>
+
   <img class="FUguy" ng-show="getRandomGuy(1,'darkorange')" src="assets/images/dude_1_darkorange.png" alt="FU guy">
   <img class="FUguy" ng-show="getRandomGuy(1,'orange')" src="assets/images/dude_1_orange.png" alt="FU guy">
   <img class="FUguy" ng-show="getRandomGuy(1,'red')" src="assets/images/dude_1_red.png" alt="FU guy">
@@ -62,6 +55,11 @@
   <img class="FUguy" ng-show="getRandomGuy(8,'grey')" src="assets/images/dude_8_grey.png" alt="FU guy">
   <img class="stamp" src="assets/images/wrongStamp.png" ng-show="question.results && !question.results.inMajority" alt="You're wrong">
   <img class="stamp" src="assets/images/rightStamp.png" ng-show="question.results && question.results.inMajority" alt="You're right">
+  <div class="questionText">
+    <div>
+      <span>{{question.get("questionText")}}</span>
+    </div>
+  </div>
   <div class="questionAnswers">
     <div class= "buttons">
       <div>
@@ -77,11 +75,6 @@
   <div class="footer">
     <div class="response" ng-show="question.results">
       {{question.results.totalAnswerCount}} responses
-    </div>
-    <div class="shareHeart">
-      <img src="assets/images/heart.png" alt="Favorite">
-      <!-- <img src="assets/images/heart_filled.png" alt="Favorite"> -->
-      <img src="assets/images/share.png" alt="Share">
     </div>
   </div>
 </div>

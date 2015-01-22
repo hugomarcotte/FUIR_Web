@@ -5,16 +5,20 @@ angular.module('fuirApp')
     $scope.questionIndex = 1;
     $scope.openFlag = false;
 
+
     if(!$scope.questions) {
 
+      // Get questions from server
       Question.getQuestions()
       .then(function(questions){
 
         $scope.questions = questions;
         var qId = $stateParams.qId
 
+        // If question Id in URL
         if(qId) {
           var found = false;
+          // Search for question in current loaded questions
           for(var i =0; i < $scope.questions.length; i++) {
             if($scope.questions[i].id === $stateParams.qId) {
               $scope.qIndex = i+1;
@@ -118,10 +122,5 @@ angular.module('fuirApp')
       });
 
     };
-
-    $scope.filterQuestions = function(question) {
-      return $scope.questions.indexOf(question) === $scope.questionIndex;
-    };
-
 
 });
