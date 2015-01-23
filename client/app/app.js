@@ -9,7 +9,8 @@ angular.module('fuirApp', [
   'bnx.module.facebook',
   'ngDialog',
   'ngMaterial',
-  'headroom'
+  'headroom',
+  '720kb.socialshare'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     $urlRouterProvider
