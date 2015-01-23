@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('fuirApp')
-  .controller('MainCtrl', function ($scope, $http, $stateParams, $location, ParseUser, Question, ngDialog, SMS, $mdSidenav) {
+  .controller('MainCtrl', function ($scope, $http, $stateParams, $location, Question, ngDialog) {
     $scope.questionIndex = 1;
     $scope.openFlag = false;
 
@@ -123,22 +123,6 @@ angular.module('fuirApp')
 
     };
 
-    $scope.openSideNav = function() {
-      $mdSidenav('right').toggle();
-    };
 
-
-    $scope.smsSent = false;
-    $scope.sendAppLink = function () {
-
-      SMS.sendAppLink($scope.phoneNumber)
-      .then(function(results){
-        $scope.smsSent = true;
-        console.log(results)
-      })
-      .catch(function(err){
-        console.log(err);
-      });
-    };
 
 });

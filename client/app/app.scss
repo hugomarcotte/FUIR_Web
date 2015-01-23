@@ -46,15 +46,17 @@ body {
   font-family: 'jonze',  sans-serif;
   color: #212121;
 
+  md-content {
+    height: inherit
+  }
   md-toolbar {
-    height: 100px;
-    line-height: 100px;
+    line-height: 75px;
     background-color: #BDBDBD;
     color: #212121;
   }
   .md-toolbar-tools {
     font-size: 2em;
-    min-height: 100px;
+    min-height: 75px;
   }
 
   .logo {
@@ -68,7 +70,7 @@ body {
 
 }
 
-.footerFUIR {
+.navBar {
   font-family: 'jonze',  sans-serif;
   color: #212121;
   background-color: #BDBDBD;
@@ -95,6 +97,7 @@ body {
   .content {
     margin-right: 20px;
     h3 {
+      margin: 0px;
       margin-bottom: inherit;
     }
   }
@@ -105,6 +108,26 @@ body {
   md-content.md-padding {
     padding-left: 0px;
   }
+}
+
+
+//////////////////////// HeadRoom
+.header {
+  position: fixed;
+  z-index: 10;
+  right: 0;
+  left: 0;
+  top: 0;
+}
+
+.headroom {
+  transition: transform 200ms linear;
+}
+.headroom--pinned {
+  transform: translateY(0%);
+}
+.headroom--unpinned {
+  transform: translateY(-100%);
 }
 
 

@@ -8,7 +8,8 @@ angular.module('fuirApp', [
   'nvd3ChartDirectives',
   'bnx.module.facebook',
   'ngDialog',
-  'ngMaterial'
+  'ngMaterial',
+  'headroom'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     $urlRouterProvider
