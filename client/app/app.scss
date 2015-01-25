@@ -110,6 +110,46 @@ body {
   }
 }
 
+.footerFUIR {
+  font-family: 'jonze',  sans-serif;
+  color: #212121;
+  background-color: #BDBDBD;
+  padding: 0 10px;
+
+  .copyright {
+    padding-bottom: 8px;
+    margin-top: 8px;
+    font-size: .75em;
+  }
+
+  .appStoreLogo {
+    img {
+      height: 55px;
+      width:auto;
+    }
+  }
+  a {
+    text-decoration: none;
+  }
+  p {
+
+  }
+  .content {
+    margin-right: 20px;
+    h3 {
+      margin: 0px;
+      margin-bottom: inherit;
+    }
+  }
+  md-content.md-default-theme {
+    background-color: inherit;
+  }
+
+  md-content.md-padding {
+    padding-left: 0px;
+  }
+}
+
 
 //////////////////////// HeadRoom
 .header {

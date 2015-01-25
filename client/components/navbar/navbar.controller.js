@@ -14,7 +14,6 @@ angular.module('fuirApp')
       SMS.sendAppLink($scope.phoneNumber)
       .then(function(results){
         $scope.smsSent = true;
-        console.log(results)
       })
       .catch(function(err){
         console.log(err);

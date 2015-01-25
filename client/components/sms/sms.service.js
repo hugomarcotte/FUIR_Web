@@ -7,7 +7,7 @@ angular.module('fuirApp')
     return {
       sendAppLink: function (phone) {
         var deferred = $q.defer();
-
+        
         $http.post('/api/sms', { phone: phone})
         .success(function(results) {
           deferred.resolve(results);

@@ -6,10 +6,9 @@ var client = require('twilio')('ACddb7cf71a16f6614f602cf37ce7be47b', '7558ae02a3
 
 // Send the link to the app
 exports.sendAppLink = function(req, res) {
-  console.log(req.body);
 
   client.sendSms({
-    to:'4158890233',
+    to:req.body.phone,
     from:'+16505607298',
     body:'Tap the link to download F.U. I\'m right: https://itunes.apple.com/app/id920877615?mt=8'
   }, function(error, message) {

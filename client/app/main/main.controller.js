@@ -120,8 +120,8 @@ angular.module('fuirApp')
         data: {question: $scope.question, randomGuyNumber: $scope.getRandomGuyNumber(), cardColor: $scope.getCardColor($scope.qIndex)},
         className: 'ngdialog-theme-default '+cardColorClass
       });
-
     };
+    
 
 
 
