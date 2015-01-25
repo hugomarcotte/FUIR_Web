@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('fuirApp')
-  .controller('MainCtrl', function ($scope, $http, $stateParams, $location, ParseUser, Question, ngDialog) {
+  .controller('MainCtrl', function ($scope, $http, $stateParams, $location, Question, ngDialog) {
     $scope.questionIndex = 1;
     $scope.openFlag = false;
 
@@ -13,7 +13,7 @@ angular.module('fuirApp')
       .then(function(questions){
 
         $scope.questions = questions;
-        var qId = $stateParams.qId
+        var qId = $stateParams.qId;
 
         // If question Id in URL
         if(qId) {
@@ -44,7 +44,7 @@ angular.module('fuirApp')
               found = true;
             })
             .catch(function(err) {
-              console.log('Cannot get question: ' +err)
+              console.log('Cannot get question: ' +err);
             });
           }
 
@@ -55,7 +55,7 @@ angular.module('fuirApp')
       });
     }
 
-    $scope.$on('$locationChangeSuccess',function(event, next, current) {
+    $scope.$on('$locationChangeSuccess',function(event, next) {
 
       // if no qId in query string (privacy, terms...)
       if(next.indexOf('?qId=') !== -1) {
@@ -66,7 +66,7 @@ angular.module('fuirApp')
           for(var i =0; i < $scope.questions.length; i++) {
             if($scope.questions[i].id === questionId) {
               $scope.qIndex = i+1;
-              $scope.question = $scope.questions[i]
+              $scope.question = $scope.questions[i];
             }
           }
         }
@@ -107,7 +107,7 @@ angular.module('fuirApp')
       else {
         $scope.showCard();
       }
-    }
+    };
 
     $scope.showCard = function () {
 
@@ -120,7 +120,9 @@ angular.module('fuirApp')
         data: {question: $scope.question, randomGuyNumber: $scope.getRandomGuyNumber(), cardColor: $scope.getCardColor($scope.qIndex)},
         className: 'ngdialog-theme-default '+cardColorClass
       });
-
     };
+    
+
+
 
 });

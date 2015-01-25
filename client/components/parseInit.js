@@ -1,4 +1,4 @@
-Parse.initialize('DJnfc0KsF8WRF0K2lr25mVm95Uzg0xnUAG72axAX', 'NTxalrgpCfGdeMwIVQ8r2budaoApAWpITreGfH10');
+
 
 window.fbAsyncInit = function() {
   Parse.FacebookUtils.init({

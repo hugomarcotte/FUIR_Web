@@ -10,7 +10,7 @@ angular.module('fuirApp')
          if(Parse.User.current()) {
            Parse.Cloud.run('GetUnansweredQuestions', {userId: Parse.User.current().id}, {
              success: function(results) {
-               console.log('showing unanswered');
+               
                deferred.resolve(results);
              },
              error: function(error) {
@@ -19,9 +19,9 @@ angular.module('fuirApp')
            });
          }
          else {
-           Parse.Cloud.run('GetTopQuesions', {dayRange:"0"}, {
+           Parse.Cloud.run('GetTopQuesions', {dayRange:'0'}, {
              success: function(results) {
-               console.log('showing top questions');
+
                deferred.resolve(results);
              },
              error: function(error) {

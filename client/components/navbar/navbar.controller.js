@@ -1,9 +1,26 @@
 'use strict';
 
 angular.module('fuirApp')
-  .controller('NavbarCtrl', function ($scope, $location, ParseUser) {
+  .controller('NavbarCtrl', function ($scope, $mdSidenav, SMS) {
 
-    $scope.isLoggedIn = Parse.User.current()? true: false;
+    $scope.openSideNav = function() {
+      $mdSidenav('right').toggle();
+    };
+
+
+    $scope.smsSent = false;
+    $scope.sendAppLink = function () {
+
+      SMS.sendAppLink($scope.phoneNumber)
+      .then(function(results){
+        $scope.smsSent = true;
+      })
+      .catch(function(err){
+        console.log(err);
+      });
+    };
+
+    //$scope.isLoggedIn = Parse.User.current()? true: false;
 
     // ParseUser.isLoggedIn()
     // .then(function(isLoggedIn){
@@ -14,8 +31,8 @@ angular.module('fuirApp')
 
     //$scope.isAdmin = false;
 
-    $scope.getCurrentUser = false//ParseUser.getCurrentUser;
-    
+    //$scope.getCurrentUser = false;//ParseUser.getCurrentUser;
+
 
     // ParseUser.getPictureURL()
     // .then(function(pictureURL) {
@@ -26,37 +43,15 @@ angular.module('fuirApp')
     // });
 
 
-    $scope.logout = function() {
-      console.log("test");
-      //ParseUser.logout();
-      $scope.isLoggedIn = false;
-      Parse.User.logOut();
-    };
+    // $scope.logout = function() {
+    //   //ParseUser.logout();
+    //   $scope.isLoggedIn = false;
+    //   Parse.User.logOut();
+    // };
+    //
+    // $scope.isActive = function(route) {
+    //   return route === $location.path();
+    // };
 
-    $scope.isActive = function(route) {
-      return route === $location.path();
-    };
 
-    $scope.exampleData = [
-    	{ key: "Right", y: 70 },
-      { key: "Wrong", y: 30 }
-     ];
-
-    var colorArray = ['#FFA500','#BE1E2D'];
-    $scope.colorFunction = function() {
-     return function(d, i) {
-       return colorArray[i];
-     };
-    }
-
-    $scope.yFunction = function(){
-     return function(d){
-       return d.y;
-     };
-    }
-    $scope.xFunction = function(){
-     return function(d) {
-       return d.key;
-     };
-    }
   });

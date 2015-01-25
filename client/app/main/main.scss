@@ -247,7 +247,7 @@
 
 .questionList {
 
-  margin: 3px -3px;
+  margin: 75px -3px;
 }
 
 .orangeCard {
@@ -261,6 +261,35 @@
 }
 .darkOrangeCard {
   background-color: #D96C24;
+}
+
+.smallCardOut {
+  float:left;
+  height: 200px;
+}
+
+.smallCard {
+  border-radius: 2px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.76), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+
+  height: calc(100% - 6px);
+  width: calc(100% - 6px);
+  margin: 3px;
+  padding: 10px;
+  text-align:center;
+  line-height: 1.2;
+  display: table;
+
+  .questionText {
+    font-size: 1.3em;
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .smallStamp {
+    width: 75px;
+    position: absolute;
+    left: 54%;
+  }
 }
 
 // Media Query Ranges
@@ -303,10 +332,18 @@ $medium-only: "only screen and (min-width : #{$small-screen}) and (max-width : #
   .smallCardOut {
     width: calc( 100% / 2);
   }
+
+  .navFUIR {
+
+    .md-toolbar-tools {
+      font-size: 1.5em;
+    }
+  }
 }
+
 @media only screen and (max-width : 400px) {
   .questionList {
-    margin: 3px 0px;
+    margin: 75px 0px;
   }
 
   .ngdialog.ngdialog-theme-default .ngdialog-content {
@@ -328,13 +365,9 @@ $medium-only: "only screen and (min-width : #{$small-screen}) and (max-width : #
   }
   .navFUIR {
 
-    md-toolbar {
-      height: 70px;
-      line-height: 70px;
-    }
     .md-toolbar-tools {
-      min-height: 70px;
-      font-size: 1.7em;
+
+      font-size: 1.5em;
     }
 
     .logo {
@@ -343,32 +376,7 @@ $medium-only: "only screen and (min-width : #{$small-screen}) and (max-width : #
     }
 
   }
-}
-
-.smallCardOut {
-  float:left;
-
-  height: 200px;
-}
-
-.smallCard {
-
-  height: calc(100% - 6px);
-  width: calc(100% - 6px);
-  margin: 3px;
-  padding: 10px;
-  text-align:center;
-  line-height: 1.2;
-  display: table;
-
-  .questionText {
-    font-size: 1.3em;
-    display: table-cell;
-    vertical-align: middle;
-  }
-  .smallStamp {
-    width: 75px;
-    position: absolute;
-    left: 54%;
+  .smallCardOut {
+    height: 265px;
   }
 }

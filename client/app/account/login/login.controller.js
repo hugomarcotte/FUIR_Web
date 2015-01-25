@@ -10,7 +10,7 @@ angular.module('fuirApp')
       })
       .catch(function(err) {
         console.log('Login error');
-        console.log(err)
+        console.log(err);
       });
     };
   });

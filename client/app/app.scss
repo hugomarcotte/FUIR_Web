@@ -1,7 +1,7 @@
 
-/* \$fa-font-path: "/bower_components/font-awesome/fonts";
+$fa-font-path: "/bower_components/font-awesome/fonts";
 
-@import 'font-awesome/scss/font-awesome'; */
+@import 'font-awesome/scss/font-awesome';
 
 
 /**
@@ -46,22 +46,68 @@ body {
   font-family: 'jonze',  sans-serif;
   color: #212121;
 
+  md-content {
+    height: inherit
+  }
   md-toolbar {
-    height: 100px;
-    line-height: 100px;
+    line-height: 75px;
     background-color: #BDBDBD;
     color: #212121;
   }
   .md-toolbar-tools {
     font-size: 2em;
-    min-height: 100px;
+    min-height: 75px;
   }
 
   .logo {
     height: 90%;
     width:auto;
   }
+  md-toolbar.md-default-theme .md-button {
+    color: #212121;
+    height: 100%;
+  }
 
+}
+
+.navBar {
+  font-family: 'jonze',  sans-serif;
+  color: #212121;
+  background-color: #BDBDBD;
+  padding: 0 10px;
+
+  .copyright {
+    padding-bottom: 8px;
+    margin-top: 8px;
+    font-size: .75em;
+  }
+
+  .appStoreLogo {
+    img {
+      height: 55px;
+      width:auto;
+    }
+  }
+  a {
+    text-decoration: none;
+  }
+  p {
+
+  }
+  .content {
+    margin-right: 20px;
+    h3 {
+      margin: 0px;
+      margin-bottom: inherit;
+    }
+  }
+  md-content.md-default-theme {
+    background-color: inherit;
+  }
+
+  md-content.md-padding {
+    padding-left: 0px;
+  }
 }
 
 .footerFUIR {
@@ -91,9 +137,37 @@ body {
   .content {
     margin-right: 20px;
     h3 {
+      margin: 0px;
       margin-bottom: inherit;
     }
   }
+  md-content.md-default-theme {
+    background-color: inherit;
+  }
+
+  md-content.md-padding {
+    padding-left: 0px;
+  }
+}
+
+
+//////////////////////// HeadRoom
+.header {
+  position: fixed;
+  z-index: 10;
+  right: 0;
+  left: 0;
+  top: 0;
+}
+
+.headroom {
+  transition: transform 200ms linear;
+}
+.headroom--pinned {
+  transform: translateY(0%);
+}
+.headroom--unpinned {
+  transform: translateY(-100%);
 }
 
 
