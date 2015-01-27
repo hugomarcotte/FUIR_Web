@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('fuirApp')
-  .controller('NavbarCtrl', function ($scope, $mdSidenav, SMS) {
+  .controller('NavbarCtrl', function ($scope, $mdSidenav, SMS, $http) {
 
     $scope.openSideNav = function() {
       $mdSidenav('right').toggle();
@@ -17,6 +17,16 @@ angular.module('fuirApp')
       })
       .catch(function(err){
         console.log(err);
+      });
+    };
+
+    $scope.sendQofTheDay = function() {
+      $http.post('/api/sms/sendQuestionOfTheDay')
+      .success(function(results) {
+        console.log(results.msg);
+      })
+      .error(function(err) {
+        console.log('Error sending question');
       });
     };
 
