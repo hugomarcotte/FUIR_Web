@@ -8,6 +8,7 @@ angular.module('fuirApp')
     };
 
 
+
     $scope.smsSent = false;
     $scope.sendAppLink = function () {
 

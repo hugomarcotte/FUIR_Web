@@ -71,9 +71,9 @@ body {
 }
 
 .navBar {
+  height:100%;
   font-family: 'jonze',  sans-serif;
   color: #212121;
-  background-color: #BDBDBD;
   padding: 0 10px;
 
   .copyright {
@@ -108,6 +108,20 @@ body {
   md-content.md-padding {
     padding-left: 0px;
   }
+
+  md-sidenav {
+    position:fixed;
+    background-color: #BDBDBD;
+  }
+
+  md-backdrop.md-opaque.md-default-theme {
+    position: fixed;
+  }
+}
+
+
+.disableScroll {
+  overflow:hidden;
 }
 
 .footerFUIR {
@@ -149,6 +163,8 @@ body {
     padding-left: 0px;
   }
 }
+
+
 
 
 //////////////////////// HeadRoom
