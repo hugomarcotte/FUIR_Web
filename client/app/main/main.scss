@@ -126,7 +126,7 @@
     display: inline-block; //for width and height to work
     margin-top: 10px;
     width: 300px;
-    min-height: 65px;
+    min-height: 75px;
     text-transform:none;
     font-size: 0.7em;
     span {
@@ -166,7 +166,7 @@
 
   .questionAnswers {
     width: 100%;
-    height: 49%;
+    height: 55%;
     display: table;
 
     .buttons {
@@ -184,8 +184,9 @@
     font-family: 'jonze',  sans-serif;
     font-size: 0.7em;
     width: 100%;
-    height: 10%;
+    height: 5%;
     display: table;
+    line-height: 35px;
     .response {
       text-align:left;
       display: table-cell;
@@ -263,7 +264,7 @@
 
 .smallCardOut {
   float:left;
-  height: 200px;
+  height: 211px;
 }
 
 .smallCard {
@@ -351,7 +352,7 @@ $medium-only: "only screen and (min-width : #{$small-screen}) and (max-width : #
   }
 }
 
-@media only screen and (max-width : 400px) {
+@media only screen and (max-width : 430px) {
   .questionList {
     margin: 75px 0px;
   }

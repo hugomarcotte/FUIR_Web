@@ -138,6 +138,6 @@ angular.module('fuirApp')
       // }
     };
 
-    
+
 
 });
