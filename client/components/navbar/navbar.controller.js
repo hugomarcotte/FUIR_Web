@@ -4,22 +4,12 @@ angular.module('fuirApp')
   .controller('NavbarCtrl', function ($scope, $mdSidenav, SMS) {
 
     $scope.openSideNav = function() {
-      $mdSidenav('right').toggle();
+      $mdSidenav('left').toggle();
     };
 
 
 
-    $scope.smsSent = false;
-    $scope.sendAppLink = function () {
 
-      SMS.sendAppLink($scope.phoneNumber)
-      .then(function(results){
-        $scope.smsSent = true;
-      })
-      .catch(function(err){
-        console.log(err);
-      });
-    };
 
     //$scope.isLoggedIn = Parse.User.current()? true: false;
 

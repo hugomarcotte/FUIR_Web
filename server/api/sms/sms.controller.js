@@ -10,7 +10,7 @@ exports.sendAppLink = function(req, res) {
   client.sendSms({
     to:req.body.phone,
     from:'+16505607298',
-    body:'Tap the link to download F.U. I\'m right: https://itunes.apple.com/app/id920877615?mt=8'
+    body:'Tap the link to download F.U. I\'m right: bit.ly/1rBoRu7'
   }, function(error, message) {
     if (!error) {
       return res.json(201, {msgID: message.sid, creationDate: message.dateCreated});

@@ -1,21 +1,18 @@
 
-<div class="navFUIR" ng-controller="NavbarCtrl">
+<div class="headerFUIR" ng-controller="NavbarCtrl">
   <headroom class="header" tolerance="0" offset="75" classes='{"initial":"headroom","pinned":"headroom--pinned","unpinned":"headroom--unpinned","top":"headroom--top","notTop":"headroom--not-top"}'>
     <md-content>
       <md-toolbar>
         <div class="md-toolbar-tools">
-          <img class="logo" src="assets/images/question_guy_red.png" alt="Logo">
-          <a href="/"><span>F.U. I'M RIGHT</span></a>
-          <span flex></span>
-
-
-          <md-button aria-label="">
-            <a href="" ng-click="openSideNav()"><i class="fa fa-navicon fa-2x"></i></a>
-          </md-button>
+          <div flex="15" class="menuButton">
+            <a href="" ng-click="openSideNav()"><i class="fa fa-navicon"></i>Menu</a>
+          </div>
+          <div class="title" flex="70">
+            <a href="/"><span>F.U. I'M RIGHT</span></a>
+          </div>
+          <div flex="15">
+          </div>
         </div>
       </md-toolbar>
     </md-content>
   </headroom>
-
-
-  

@@ -1,0 +1,38 @@
+<div class="sideBar" ng-controller="SidenavCtrl">
+  <md-sidenav md-component-id="left" class="md-sidenav-left" md-is-open="navOpen">
+    <div class="sideBarContent" layout="column">
+
+      <a href="" class="closebutton" ng-click="closeSideNav()">X</a>
+
+      <a class="appStoreLogo" href="bit.ly/1rBoRu7" target="_blank">
+        <img src="assets/images/AppStoreLogo.png" alt="AppStore">
+      </a>
+      <a href="" target="_blank">ABOUT US</a>
+      <a href="https://itunes.apple.com/us/podcast/f.u.-im-right/id879984798?mt=2" target="_blank">PODCAST</a>
+      <a href="https://www.facebook.com/fuimright" target="_blank">FACEBOOK</a>
+      <a href="https://twitter.com/fuimright" target="_blank">TWITTER</a>
+
+      <div class="sendLink">
+        send me a download link
+        <input placeholder="Phone Number" ng-model="phoneNumber" ng-change="smsSent = false" required md-maxlength="10">
+        <md-button href="#" class="md-raised" ng-click="sendAppLink()">Send</md-button>
+        <br><label ng-show="smsSent">SMS was sent</label>
+      </div>
+      <div class="copyright">
+        © FUIR, LLC. 2015
+      </div>
+
+
+      <!-- <div class="copyright" layout="row" layout-align="space-between center">
+        <div>
+          © FUIR, LLC. 2014
+        </div>
+        <div>
+          <a href="/privacy">Privacy</a>
+          <a style="margin-left: 5px;" href="/terms">Terms</a>
+        </div>
+      </div> -->
+    </div>
+
+  </md-sidenav>
+</div>

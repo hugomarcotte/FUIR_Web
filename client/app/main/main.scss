@@ -1,4 +1,7 @@
 
+/////////////////////////////////
+// DIALOG FOR BIG QUESTION CARDS
+///////////////////////////////
 
 @-webkit-keyframes ngdialog-flipin-horizontal {
   0% {
@@ -60,11 +63,6 @@
   }
 }
 
-
-//
-// Dialog for big question card
-//
-
 .ngdialog.ngdialog-theme-default.ngdialog-closing .ngdialog-content {
   /* -webkit-animation: ngdialog-flipout-horizontal .5s;
   animation: ngdialog-flipout-horizontal .5s; */
@@ -113,10 +111,9 @@
 }
 
 
-
-//
-// Big question card
-//
+/////////////////////////////////
+// BIG QUESTION CARDS
+///////////////////////////////
 
 .questionCard {
   font-family: 'DharmaGothicPRegular',  sans-serif;
@@ -124,6 +121,7 @@
   text-align: center;
   font-size: 1.5em;
   height: 100%;
+
   .md-button {
     display: inline-block; //for width and height to work
     margin-top: 10px;
@@ -241,9 +239,9 @@
 }
 
 
-//
-// Small question cards
-//
+/////////////////////////////////
+// SMALL QUESTION CARDS
+///////////////////////////////
 
 .questionList {
 
@@ -292,6 +290,13 @@
   }
 }
 
+
+
+
+////////////////////////////////
+// Media queries
+///////////////////////////////
+
 // Media Query Ranges
 $small-screen: 700px !default;
 $medium-screen: 992px !default;
@@ -333,9 +338,14 @@ $medium-only: "only screen and (min-width : #{$small-screen}) and (max-width : #
     width: calc( 100% / 2);
   }
 
-  .navFUIR {
+
+}
+
+@media only screen and (max-width : 500px) {
+  .headerFUIR {
 
     .md-toolbar-tools {
+      padding: 0 5px;
       font-size: 1.5em;
     }
   }
@@ -363,12 +373,7 @@ $medium-only: "only screen and (min-width : #{$small-screen}) and (max-width : #
       width: 33%;
     }
   }
-  .navFUIR {
-
-    .md-toolbar-tools {
-
-      font-size: 1.5em;
-    }
+  .headerFUIR {
 
     .logo {
       height: 90%;

@@ -32,16 +32,23 @@ body {
     font-size: 1.5em;
   }
 
-
   a {
     color: #212121;
   }
 
   background-color: #212121;
-
 }
 
-.navFUIR {
+.disableScroll {
+  overflow:hidden;
+}
+
+
+////////////////////////////////
+// HEADER
+///////////////////////////////
+
+.headerFUIR {
 
   font-family: 'jonze',  sans-serif;
   color: #212121;
@@ -57,6 +64,12 @@ body {
   .md-toolbar-tools {
     font-size: 2em;
     min-height: 75px;
+    padding: 0 20px;
+
+    div {
+      height: 75px;
+      margin: 0px;
+    }
   }
 
   .logo {
@@ -68,45 +81,63 @@ body {
     height: 100%;
   }
 
+  .menuButton {
+    font-size: 0.3em;
+    line-height: 75px;
+
+    .fa-navicon{
+      margin-right: 10px;
+    }
+  }
+
+  .title {
+    text-align:center;
+    line-height: 67px;
+  }
+
 }
 
-.navBar {
-  height:100%;
+////////////////////////////////
+// SIDE BAR MENU
+///////////////////////////////
+
+.sideBar {
   font-family: 'jonze',  sans-serif;
-  color: #212121;
-  padding: 0 10px;
 
-  .copyright {
-    padding-bottom: 8px;
-    margin-top: 8px;
-    font-size: .75em;
-  }
+  .sideBarContent {
+    padding: 20px;
+    text-align: center;
 
-  .appStoreLogo {
-    img {
-      height: 55px;
-      width:auto;
+    .closebutton {
+      text-align: left;
+      font-size: 1.5em;
+      margin-bottom: 10px;
     }
-  }
-  a {
-    text-decoration: none;
-  }
-  p {
 
-  }
-  .content {
-    margin-right: 20px;
-    h3 {
-      margin: 0px;
-      margin-bottom: inherit;
+    .appStoreLogo {
+      img {
+        height: 55px;
+        width:auto;
+      }
     }
-  }
-  md-content.md-default-theme {
-    background-color: inherit;
-  }
 
-  md-content.md-padding {
-    padding-left: 0px;
+    a {
+      font-size: 1.5em;
+      text-decoration: none;
+      margin-bottom: 20px;
+    }
+
+    .sendLink {
+      margin-top: 50px;
+      a {
+        font-size: 0.75em;
+      }
+    }
+
+    .copyright {
+      margin-top: 50px;
+      font-size: .75em;
+    }
   }
 
   md-sidenav {
@@ -117,12 +148,15 @@ body {
   md-backdrop.md-opaque.md-default-theme {
     position: fixed;
   }
-}
+
+  md-content.md-default-theme {
+    background-color: inherit;
+  }
 
 
-.disableScroll {
-  overflow:hidden;
+
 }
+
 
 .footerFUIR {
   font-family: 'jonze',  sans-serif;

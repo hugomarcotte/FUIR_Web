@@ -138,13 +138,6 @@ angular.module('fuirApp')
       // }
     };
 
-    $scope.$watch('navOpen', function(newValue, oldValue) {
-      if(newValue === true) { $rootScope.bodylayout = 'disableScroll'; }
-      else { $rootScope.bodylayout = ''; }
-    });
-
-    $scope.closeSideNav = function () {
-      $mdSidenav('right').close();
-    };
+    
 
 });
