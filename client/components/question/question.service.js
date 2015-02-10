@@ -44,11 +44,12 @@ angular.module('fuirApp')
 
         var page = Math.ceil((_questions.length / 30)) + 1;
 
-        console.log('getting page:'+page);
         Parse.Cloud.run('GetTopQuesions', {dayRange:'0', page:page}, {
           success: function(results) {
-            console.log(results);
-            _questions.push(results);
+
+            results.forEach(function(question) {
+              _questions.push(question);
+            });
             deferred.resolve(results);
           },
           error: function(error) {

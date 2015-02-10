@@ -122,20 +122,18 @@ angular.module('fuirApp')
 
     $scope.busy = false;
     $scope.loadMoreQuestions = function() {
-      console.log('loadin');
-      // if($scope.busy !== true && $scope.questions) {
-      //   $scope.busy = true;
-      //   Question.getMoreQuestions()
-      //   .then(function(questions){
-      //
-      //     if(questions.length !== 0) {
-      //       questions.forEach(function(question) {
-      //         $scope.questions.push(question);
-      //       });
-      //       $scope.busy = false;
-      //     }
-      //   });
-      // }
+
+      if($scope.busy !== true && $scope.questions) {
+
+         $scope.busy = true;
+         Question.getMoreQuestions()
+         .then(function(questions){
+
+           if(questions.length !== 0) {
+             $scope.busy = false; // Stop API calls when empty;
+           }
+         });
+      }
     };
 
 
