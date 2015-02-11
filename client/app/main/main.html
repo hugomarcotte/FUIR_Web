@@ -74,13 +74,21 @@
   </div>
   <div class="questionAnswers">
     <div class= "buttons">
-      <div>
-        <md-button href="#" class="md-raised" ng-disabled="question.results" ng-click="question.results || saveAnswer(0)">{{question.get("answer1Text")}}</md-button>
-        <span class="results" ng-show="question.results">{{question.results.percentAnsw1}}%</span>
+      <div ng-class="{'showResultsButton' : question.results}">
+        <div>
+          <md-button href="#" class="md-raised" ng-disabled="question.results" ng-click="question.results || saveAnswer(0)">{{question.get("answer1Text")}}</md-button>
+        </div>
+        <div>
+          <md-button href="#" class="md-raised" ng-disabled="question.results" ng-click="question.results || saveAnswer(1)">{{question.get("answer2Text")}}</md-button>
+        </div>
       </div>
-      <div>
-        <md-button href="#" class="md-raised" ng-disabled="question.results" ng-click="question.results || saveAnswer(1)">{{question.get("answer2Text")}}</md-button>
-        <span class="results" ng-show="question.results">{{question.results.percentAnsw2}}%</span>
+      <div ng-class="question.results? 'showResults' : 'hideResults'">
+        <div class="resultsDiv">
+          <span class="results" ng-show="question.results">{{question.results.percentAnsw1}}%</span>
+        </div>
+        <div class="resultsDiv">
+          <span class="results" ng-show="question.results">{{question.results.percentAnsw2}}%</span>
+        </div>
       </div>
     </div>
   </div>
