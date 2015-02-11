@@ -1,5 +1,7 @@
 'use strict';
 
+var config = require('../local.env');
+
 // Development specific configuration
 // ==================================
 module.exports = {
@@ -8,5 +10,10 @@ module.exports = {
     uri: 'mongodb://localhost/fuir-dev'
   },
 
-  seedDB: true
+  seedDB: true,
+
+  twilio: {
+    sid: config.twilio.sid,
+    auth: config.twilio.auth
+  }
 };

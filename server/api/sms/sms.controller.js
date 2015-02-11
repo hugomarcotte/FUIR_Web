@@ -1,8 +1,9 @@
 'use strict';
 
 var _ = require('lodash');
+var config = require('../../config/environment');
 //Initialize a REST client in a single line:
-var client = require('twilio')('ACddb7cf71a16f6614f602cf37ce7be47b', '7558ae02a335d1dc5b2764d0641de24e');
+var client = require('twilio')(config.twilio.sid, config.twilio.auth);
 
 // Send the link to the app
 exports.sendAppLink = function(req, res) {
