@@ -9,69 +9,62 @@ angular.module('fuirApp')
       getQuestions: function () {
         var deferred = $q.defer();
 
-        if(_questions.length === 0) {
-          if(Parse.User.current()) {
-            Parse.Cloud.run('GetUnansweredQuestions', {userId: Parse.User.current().id}, {
-              success: function(results) {
-                _questions = results
-                deferred.resolve(_questions);
-              },
-              error: function(error) {
-                deferred.reject(error);
-              }
-            });
-          }
-          else {
-            Parse.Cloud.run('GetTopQuesions', {dayRange:'0'}, {
-              success: function(results) {
-                _questions = results
-                deferred.resolve(_questions);
-              },
-              error: function(error) {
-                deferred.reject(error);
-              }
-            });
-          }
-        }
-        else {
-          deferred.resolve(_questions);
-        }
-        return deferred.promise;
-      },
-
-      getMoreQuestions: function() {
-        var deferred = $q.defer();
-
         var page = Math.ceil((_questions.length / 30)) + 1;
 
-        Parse.Cloud.run('GetTopQuesions', {dayRange:'0', page:page}, {
-          success: function(results) {
+        $http.get('/api/questions/'+page)
+        .success(function(questions) {
+          questions.forEach(function(question) {
+            _questions.push(question);
+          });
 
-            results.forEach(function(question) {
-              _questions.push(question);
-            });
-            deferred.resolve(results);
-          },
-          error: function(error) {
-            deferred.reject(error);
-          }
+          deferred.resolve(_questions);
+        })
+        .error(function(err) {
+          deferred.reject(err);
         });
+
+        // if(_questions.length === 0) {
+        //   if(Parse.User.current()) {
+        //     Parse.Cloud.run('GetUnansweredQuestions', {userId: Parse.User.current().id}, {
+        //       success: function(results) {
+        //         _questions = results
+        //         deferred.resolve(_questions);
+        //       },
+        //       error: function(error) {
+        //         deferred.reject(error);
+        //       }
+        //     });
+        //   }
+        //   else {
+        //     Parse.Cloud.run('GetTopQuesions', {dayRange:'0'}, {
+        //       success: function(results) {
+        //         _questions = results
+        //         deferred.resolve(_questions);
+        //       },
+        //       error: function(error) {
+        //         deferred.reject(error);
+        //       }
+        //     });
+        //   }
+        // }
+        // else {
+        //   deferred.resolve(_questions);
+        // }
+
 
         return deferred.promise;
       },
 
       getQuestion: function(questionId) {
-        var deferred = $q.defer(),
-            Question = Parse.Object.extend('Question'),
-            query = new Parse.Query(Question);
 
-        query.get(questionId, {
-          success: function(question) {
-            deferred.resolve(question);
-          },
-          error: function(object, error) {
-            deferred.reject(error);
-          }
+        var deferred = $q.defer();
+
+        $http.get('/api/questions/byId/'+questionId)
+        .success(function(question) {
+          deferred.resolve(question);
+        })
+        .error(function(err) {
+          deferred.reject(err);
         });
 
         return deferred.promise;

@@ -5,7 +5,7 @@
 
     <a class="smallCardOut" href="" ng-click="openQuestionCard(question, $index+1)"  ng-repeat="question in questions">
       <div class="smallCard {{getCardColor($index+1)}}">
-        <span class="questionText">{{question.get("questionText")}}</span>
+        <span class="questionText">{{question.questionText}}</span>
         <!-- <img class="smallStamp" src="assets/images/wrongStamp.png" ng-show="question.results && !question.results.inMajority" alt="You're wrong">
         <img class="smallStamp" src="assets/images/rightStamp.png" ng-show="question.results && question.results.inMajority" alt="You're right"> -->
       </div>
@@ -69,17 +69,17 @@
   <img class="stamp" src="assets/images/rightStamp.png" ng-show="question.results && question.results.inMajority" alt="You're right">
   <div class="questionText">
     <div>
-      <span>{{question.get("questionText")}}</span>
+      <span>{{question.questionText }}</span>
     </div>
   </div>
   <div class="questionAnswers">
     <div class= "buttons">
       <div ng-class="{'showResultsButton' : question.results}">
         <div>
-          <md-button href="#" class="md-raised" ng-disabled="question.results" ng-click="question.results || saveAnswer(0)">{{question.get("answer1Text")}}</md-button>
+          <md-button href="#" class="md-raised" ng-disabled="question.results" ng-click="question.results || saveAnswer(0)">{{question.answer1Text}}</md-button>
         </div>
         <div>
-          <md-button href="#" class="md-raised" ng-disabled="question.results" ng-click="question.results || saveAnswer(1)">{{question.get("answer2Text")}}</md-button>
+          <md-button href="#" class="md-raised" ng-disabled="question.results" ng-click="question.results || saveAnswer(1)">{{question.answer2Text}}</md-button>
         </div>
       </div>
       <div ng-class="question.results? 'showResults' : 'hideResults'">
