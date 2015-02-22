@@ -15,5 +15,10 @@ module.exports = {
   twilio: {
     sid: config.twilio.sid,
     auth: config.twilio.auth
+  },
+
+  parse: {
+    appId: config.parse.appId,
+    jsKey: config.parse.jsKey
   }
 };

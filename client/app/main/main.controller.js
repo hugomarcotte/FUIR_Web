@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('fuirApp')
-  .controller('MainCtrl', function ($scope, $stateParams, $location, Question, ngDialog, $mdSidenav) {
+  .controller('MainCtrl', function ($scope, $stateParams, $location, Question, ngDialog) {
     $scope.questionIndex = 1;
     $scope.openFlag = false;
 

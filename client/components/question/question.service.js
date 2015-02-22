@@ -71,49 +71,15 @@ angular.module('fuirApp')
       },
 
       saveAnswer: function (questionId, answerIndex) {
-        var deferred = $q.defer(),
-            Answer = Parse.Object.extend('Answer'),
-            answer = new Answer();
+        var deferred = $q.defer();
 
-        // Get question answered
-        this.getQuestion(questionId)
-        .then(function(question) {
-          var countAnswer1 = question.get('countAnswer1'),
-              countAnswer2 = question.get('countAnswer2');
-
-          // Calculate if in majority
-          var inMajority = true;
-          if(answerIndex === 0) {
-            countAnswer1++;
-            if(countAnswer1 < countAnswer2) {
-              inMajority = false;
-            }
-          }
-          else if(answerIndex === 1) {
-            countAnswer2++;
-            if(countAnswer2 < countAnswer1) {
-              inMajority = false;
-            }
-          }
-
-          // Save Answer in parse
-          answer.save({
-            choiceIndex: answerIndex,
-            question: question,
-            user: ParseUser.getCurrentUser(),
-            inMajority: inMajority
-          }, {
-            success: function(newAnswer) {
-              deferred.resolve(newAnswer);
-            },
-            error: function(newAnswer, error) {
-              deferred.reject(error);
-            }
+        $http.post('/api/answers/'+questionId, {answerIndex: answerIndex})
+          .success(function(question) {
+            deferred.resolve(question);
+          })
+          .error(function(err) {
+            deferred.reject(err);
           });
-        })
-        .catch(function(err) {
-          deferred.reject(err);
-        });
 
         return deferred.promise;
       }

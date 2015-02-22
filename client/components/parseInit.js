@@ -2,7 +2,7 @@
 
 // window.fbAsyncInit = function() {
 //   Parse.FacebookUtils.init({
-//     appId      : '326940484138295',
+//     appId      : '',
 //     status     : false,
 //     version:  'v2.0',
 //     cookie     : true,

@@ -1,9 +1,10 @@
 'use strict';
 
 var _ = require('lodash');
+var config = require('../../config/environment');
 var Parse = require('parse').Parse;
 
-Parse.initialize('DJnfc0KsF8WRF0K2lr25mVm95Uzg0xnUAG72axAX', 'NTxalrgpCfGdeMwIVQ8r2budaoApAWpITreGfH10');
+Parse.initialize(config.parse.appId, config.parse.jsKey);
 
 
 // Get list of questions
@@ -29,7 +30,7 @@ exports.getQuestion = function(req, res) {
     success: function(question) {
       res.json(200, question)
     },
-    error: function(object, error) {
+    error: function(error) {
       return handleError(res, error);
     }
   });

@@ -17,5 +17,4 @@ angular.module('fuirApp', [
       .otherwise('/');
 
     $locationProvider.html5Mode(true);
-
   });
