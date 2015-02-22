@@ -1,11 +1,9 @@
 'use strict';
 
 angular.module('fuirApp')
-  .controller('MainCtrl', function ($scope, $http, $stateParams, $location, Question, ngDialog, $mdSidenav, $rootScope) {
+  .controller('MainCtrl', function ($scope, $stateParams, $location, Question, ngDialog) {
     $scope.questionIndex = 1;
     $scope.openFlag = false;
-
-
 
     // Get questions from server
     Question.getQuestions()
@@ -65,7 +63,7 @@ angular.module('fuirApp')
         if(!$scope.openFlag) {
           var questionId = next.slice(next.indexOf('?qId=')+5);
           for(var i =0; i < $scope.questions.length; i++) {
-            if($scope.questions[i].id === questionId) {
+            if($scope.questions[i].objectId === questionId) {
               $scope.qIndex = i+1;
               $scope.question = $scope.questions[i];
             }
@@ -98,7 +96,7 @@ angular.module('fuirApp')
         $scope.openFlag = true;
 
         // Change URL
-        $location.search('qId', question.id);
+        $location.search('qId', question.objectId);
       }
       else {
         $scope.showCard();
@@ -126,7 +124,7 @@ angular.module('fuirApp')
       if($scope.busy !== true && $scope.questions) {
 
          $scope.busy = true;
-         Question.getMoreQuestions()
+         Question.getQuestions()
          .then(function(questions){
 
            if(questions.length !== 0) {

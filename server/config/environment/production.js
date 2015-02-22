@@ -24,5 +24,10 @@ module.exports = {
   twilio: {
     sid: process.env.TWILIOSID,
     auth: process.env.TWILIOAUTH
+  },
+
+  parse: {
+    appId: process.env.PARSEAPPID,
+    jsKey: process.env.PARSEKEY
   }
 };

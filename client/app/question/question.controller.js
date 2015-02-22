@@ -50,19 +50,19 @@ angular.module('fuirApp')
       // });
 
       // Save answer
-      Question.saveAnswer($scope.question.id, answerIndex)
+      Question.saveAnswer($scope.question.objectId, answerIndex)
       .then(function(newAnswer){
 
         // Get question with new count values
-        Question.getQuestion($scope.question.id)
+        Question.getQuestion($scope.question.objectId)
         .then(function(question){
 
           // Add results to question in scope
           $scope.question.results = {
-                inMajority: newAnswer.get('inMajority'),
-                percentAnsw1: Math.ceil((question.get('countAnswer1') / question.get('totalAnswerCount')) * 100),
-                percentAnsw2: Math.floor((question.get('countAnswer2') / question.get('totalAnswerCount')) * 100),
-                totalAnswerCount: question.get('totalAnswerCount')
+                inMajority: newAnswer.inMajority,
+                percentAnsw1: Math.ceil((question.countAnswer1 / question.totalAnswerCount) * 100),
+                percentAnsw2: Math.floor((question.countAnswer2 / question.totalAnswerCount) * 100),
+                totalAnswerCount: question.totalAnswerCount
           };
 
           $scope.question.answered = true;
