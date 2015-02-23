@@ -5,7 +5,6 @@ angular.module('fuirApp', [
   'ngResource',
   'ngSanitize',
   'ui.router',
-  'nvd3ChartDirectives',
   'bnx.module.facebook',
   'ngDialog',
   'ngMaterial',
