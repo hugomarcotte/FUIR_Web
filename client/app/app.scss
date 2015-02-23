@@ -11,6 +11,10 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 button, html, input, select, textarea {
   font-family: 'DharmaGothicPRegular',  sans-serif;
 }
+body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4 {
+  font-family: 'DharmaGothicPRegular',  sans-serif;
+}
+
 
 .browsehappy {
     margin: 0.2em 0;
@@ -33,6 +37,9 @@ body {
   }
 
   a {
+    color: #212121;
+  }
+  a, a:hover, a:focus {
     color: #212121;
   }
 
@@ -108,6 +115,11 @@ body {
     padding: 20px;
     text-align: center;
 
+    .btn-primary:not(.btn-link):not(.btn-flat) {
+      background-color: #212121;
+      color: white;
+    }
+
     .closebutton {
       text-align: left;
       font-size: 1.5em;
@@ -135,7 +147,7 @@ body {
     }
 
     .copyright {
-      margin-top: 50px;
+      margin-top: 75px;
       font-size: .75em;
     }
   }

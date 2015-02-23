@@ -15,8 +15,9 @@
       <div class="sendLink">
         send me a download link
         <input placeholder="Phone Number" ng-model="phoneNumber" ng-change="smsSent = false" required md-maxlength="10">
-        <md-button href="#" class="md-raised" ng-click="sendAppLink()">Send</md-button>
-        <br><label ng-show="smsSent">SMS was sent</label>
+        <br>
+        <button class="btn btn-primary" ng-click="sendAppLink()">Send</button>
+        <label ng-show="smsSent">SMS was sent</label>
       </div>
       <div class="copyright">
         © FUIR, LLC. 2015

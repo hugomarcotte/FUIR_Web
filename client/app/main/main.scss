@@ -111,6 +111,7 @@
 }
 
 
+
 /////////////////////////////////
 // BIG QUESTION CARDS
 ///////////////////////////////
@@ -133,6 +134,19 @@
       white-space: initial;
     }
   }
+
+  button {
+    display: inline-block; //for width and height to work
+    margin-top: 10px;
+    width: 300px;
+    min-height: 90px;
+    text-transform:none;
+    font-size: 0.7em;
+    span {
+      white-space: initial;
+    }
+  }
+
   .md-button.md-altTheme-theme[disabled],
   .md-button.md-altTheme-theme.md-raised[disabled],
   .md-button.md-altTheme-theme.md-fab[disabled] {
@@ -225,6 +239,10 @@
     .md-button{
       background-color: #BE1E2D;
     }
+    .btn-primary:not(.btn-link):not(.btn-flat) {
+      background-color: #BE1E2D;
+      color: #212121;
+    }
   }
 }
 
@@ -232,6 +250,10 @@
   .questionCard {
     .md-button{
       background-color: #6D6E71;
+    }
+    .btn-primary:not(.btn-link):not(.btn-flat) {
+      background-color: #6D6E71;
+      color: #212121;
     }
   }
 }
@@ -241,6 +263,10 @@
     .md-button{
       background-color: #D96C24;
     }
+    .btn-primary:not(.btn-link):not(.btn-flat) {
+      background-color: #D96C24;
+      color: #212121;
+    }
   }
 }
 
@@ -248,6 +274,10 @@
   .questionCard {
     .md-button{
       background-color: #F7941E;
+    }
+    .btn-primary:not(.btn-link):not(.btn-flat) {
+      background-color: #F7941E;
+      color: #212121;
     }
   }
 }
