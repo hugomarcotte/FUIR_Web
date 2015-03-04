@@ -3,5 +3,5 @@
 angular.module('fuirApp')
   .controller('BlogCtrl', function ($scope, $window) {
 
-    $window.location.href = 'http://fuirblog.herokuapp.com/?feed=rss2';
+    $window.location.href = 'http://fuirblog.herokuapp.com/?feed=podcast';
   });
