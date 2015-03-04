@@ -15,23 +15,7 @@
 <script type="text/ng-template" id="questionTemplate">
 <div class="questionCard" md-theme="altTheme">
 
-  <div class="footer" style="height: 15%;">
-    <div class="shareHeart">
-      <!-- <img src="assets/images/heart.png" alt="Favorite"> -->
-      <!-- <img src="assets/images/heart_filled.png" alt="Favorite"> -->
 
-      <!--
-      <img src="assets/images/share.png" ng-click="shareQuestion = true" alt="Share" style="cursor:pointer;">
-
-      <a href="#" socialshare socialshare-provider="facebook" socialshare-text="share on facebook" socialshare-media="http://720kb.net/assets/img/logo.png">
-      facebook
-      </a>
-      <a href="#" socialshare socialshare-provider="twitter" socialshare-text="Share on twitter" socialshare-media="http://fuimright.herokuapp.com/assets/images/4921eac3.question_guy_red.png">
-      twitter
-      </a>
-      -->
-    </div>
-  </div>
 
   <img class="FUguy" ng-show="getRandomGuy(1,'darkorange')" src="assets/images/dude_1_darkorange.png" alt="FU guy">
   <img class="FUguy" ng-show="getRandomGuy(1,'orange')" src="assets/images/dude_1_orange.png" alt="FU guy">
@@ -74,7 +58,7 @@
   </div>
   <div class="questionAnswers">
     <div class= "buttons">
-      <div ng-class="{'showResultsButton' : question.results}">
+      <div ng-class="{'showResultsButton' : question.results}" style="width:70%;margin:auto;">
         <div>
           <button class="btn btn-primary" ng-disabled="question.results" ng-click="question.results || saveAnswer(0)">{{question.answer1Text}}</button>
         </div>
@@ -82,12 +66,12 @@
           <button class="btn btn-primary"  ng-disabled="question.results" ng-click="question.results || saveAnswer(1)">{{question.answer2Text}}</button>
         </div>
       </div>
-      <div ng-class="question.results? 'showResults' : 'hideResults'">
+      <div ng-show="question.results" class="results" >
         <div class="resultsDiv">
-          <span class="results" ng-show="question.results">{{question.results.percentAnsw1}}%</span>
+          <span class="resultsText" ng-show="question.results">{{question.results.percentAnsw1}}%</span>
         </div>
         <div class="resultsDiv">
-          <span class="results" ng-show="question.results">{{question.results.percentAnsw2}}%</span>
+          <span class="resultsText" ng-show="question.results">{{question.results.percentAnsw2}}%</span>
         </div>
       </div>
     </div>
@@ -97,5 +81,23 @@
       {{question.results.totalAnswerCount}} responses
     </div>
   </div>
+
+  <!--<div class="footer" style="height: 15%;">-->
+    <!--<div class="shareHeart">-->
+      <!--&lt;!&ndash; <img src="assets/images/heart.png" alt="Favorite"> &ndash;&gt;-->
+      <!--&lt;!&ndash; <img src="assets/images/heart_filled.png" alt="Favorite"> &ndash;&gt;-->
+
+      <!--&lt;!&ndash;-->
+      <!--<img src="assets/images/share.png" ng-click="shareQuestion = true" alt="Share" style="cursor:pointer;">-->
+
+      <!--<a href="#" socialshare socialshare-provider="facebook" socialshare-text="share on facebook" socialshare-media="http://720kb.net/assets/img/logo.png">-->
+      <!--facebook-->
+      <!--</a>-->
+      <!--<a href="#" socialshare socialshare-provider="twitter" socialshare-text="Share on twitter" socialshare-media="http://fuimright.herokuapp.com/assets/images/4921eac3.question_guy_red.png">-->
+      <!--twitter-->
+      <!--</a>-->
+      <!--&ndash;&gt;-->
+    <!--</div>-->
+  <!--</div>-->
 </div>
 </script>

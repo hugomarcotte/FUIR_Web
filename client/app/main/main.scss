@@ -88,9 +88,9 @@
 .ngdialog.ngdialog-theme-default .ngdialog-close:before {
   color: #212121;
   font-family: 'jonze',  sans-serif;
-  font-size: 3em;
-  line-height: 55px;
-  right: 20px;
+  font-size: 2em;
+  line-height: 20px;
+  right: 5px;
 }
 
 .ngdialog.ngdialog-theme-default.bigorangeCard .ngdialog-content {
@@ -123,25 +123,14 @@
   font-size: 1.5em;
   height: 100%;
 
-  .md-button {
-    display: inline-block; //for width and height to work
-    margin-top: 10px;
-    width: 300px;
-    min-height: 90px;
-    text-transform:none;
-    font-size: 0.7em;
-    span {
-      white-space: initial;
-    }
-  }
-
   button {
-    display: inline-block; //for width and height to work
-    margin-top: 10px;
-    width: 300px;
+    //display: inline-block; //for width and height to work
+    //margin-top: 10px;
+    width: 100%;
     min-height: 90px;
     text-transform:none;
-    font-size: 0.7em;
+    font-size: 0.6em;
+    margin: 5px 1px;
     span {
       white-space: initial;
     }
@@ -156,17 +145,22 @@
     width: 175px;
     position: absolute;
     left: 5%;
-    top: 35%;
+    top: 32%;
   }
   .stamp {
     width: 130px;
     position: absolute;
     left: 65%;
     top: 35%;
+
+
   }
+  .ng-hide-remove { animation:0.5s flipInX ease; }
 
   .questionText {
-    height:25%;
+    height: 40%;
+    padding-top: 25px;
+
     div {
       height:100%;
       width: 100%;
@@ -180,30 +174,34 @@
 
   .questionAnswers {
     width: 100%;
-    height: 55%;
+    height: 53%;
     display: table;
 
     .buttons {
       display: table-cell;
       vertical-align: bottom;
-      .results{
-        font-family: 'jonze',  sans-serif;
-        font-size: 1.8em;
-        margin-left: 10px;
-      }
+
       .showResultsButton {
         float: left;
       }
-      .hideResults {
-        height: 0;
-      }
-      .showResults {
+
+      .results {
         float: left;
         .resultsDiv {
-          height: 106px;
-          line-height: 106px;
+          height: 100px;
+          line-height: 100px;
+
+          .resultsText{
+            font-family: 'jonze',  sans-serif;
+            font-size: 1.5em;
+            margin-left: 15px;
+          }
         }
+
       }
+      .ng-hide-remove { animation:0.5s slideInRight ease; }
+
+
     }
   }
 
@@ -211,14 +209,14 @@
     font-family: 'jonze',  sans-serif;
     font-size: 0.7em;
     width: 100%;
-    height: 5%;
+    height: 7%;
     display: table;
     line-height: 35px;
     .response {
       text-align:left;
       display: table-cell;
       vertical-align: bottom;
-      padding-left: 20px;
+      padding-left: 7px;
     }
     .shareHeart {
       text-align:right;
@@ -230,6 +228,7 @@
         height: 50px;
       }
     }
+    .ng-hide-remove { animation:0.5s fadeIn ease; }
 
   }
 }
