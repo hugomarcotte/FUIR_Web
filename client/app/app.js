@@ -9,7 +9,8 @@ angular.module('fuirApp', [
   'ngDialog',
   'ngMaterial',
   'headroom',
-  '720kb.socialshare'
+  '720kb.socialshare',
+  'ngAnimate'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     $urlRouterProvider
