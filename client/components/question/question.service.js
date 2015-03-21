@@ -23,35 +23,6 @@ angular.module('fuirApp')
           deferred.reject(err);
         });
 
-        // if(_questions.length === 0) {
-        //   if(Parse.User.current()) {
-        //     Parse.Cloud.run('GetUnansweredQuestions', {userId: Parse.User.current().id}, {
-        //       success: function(results) {
-        //         _questions = results
-        //         deferred.resolve(_questions);
-        //       },
-        //       error: function(error) {
-        //         deferred.reject(error);
-        //       }
-        //     });
-        //   }
-        //   else {
-        //     Parse.Cloud.run('GetTopQuesions', {dayRange:'0'}, {
-        //       success: function(results) {
-        //         _questions = results
-        //         deferred.resolve(_questions);
-        //       },
-        //       error: function(error) {
-        //         deferred.reject(error);
-        //       }
-        //     });
-        //   }
-        // }
-        // else {
-        //   deferred.resolve(_questions);
-        // }
-
-
         return deferred.promise;
       },
 
@@ -71,17 +42,8 @@ angular.module('fuirApp')
       },
 
       saveAnswer: function (questionId, answerIndex) {
-        var deferred = $q.defer();
 
-        $http.post('/api/answers/'+questionId, {answerIndex: answerIndex})
-          .success(function(question) {
-            deferred.resolve(question);
-          })
-          .error(function(err) {
-            deferred.reject(err);
-          });
-
-        return deferred.promise;
+        return $http.post('/api/answers/'+questionId, {answerIndex: answerIndex})
       }
     };
   });

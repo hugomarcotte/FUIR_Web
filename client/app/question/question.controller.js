@@ -31,12 +31,12 @@ angular.module('fuirApp')
     $scope.saveAnswer = function(answerIndex) {
 
       // console.log('saving');
-      // Question.getQuestion($scope.question.id)
+      // Question.getQuestion($scope.question.objectId)
       // .then(function(question){
       //
       //   // Add results to question in scope
       //   $scope.question.results = {
-      //     inMajority: true,
+      //     inMajority: false,
       //     percentAnsw1: 60,
       //     percentAnsw2: 40,
       //     totalAnswerCount: 400
@@ -51,7 +51,7 @@ angular.module('fuirApp')
 
       // Save answer
       Question.saveAnswer($scope.question.objectId, answerIndex)
-      .then(function(newAnswer){
+      .success(function(newAnswer) {
 
         // Get question with new count values
         Question.getQuestion($scope.question.objectId)
@@ -66,13 +66,15 @@ angular.module('fuirApp')
           };
 
           $scope.question.answered = true;
-
         })
         .catch(function(err){
+          console.log('Cannot get results');
           console.log(err);
         });
+
       })
-      .catch(function(err){
+      .error(function(err) {
+        console.log('Cannot save answer');
         console.log(err);
       });
 

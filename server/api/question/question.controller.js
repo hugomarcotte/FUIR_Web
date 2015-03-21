@@ -14,7 +14,7 @@ exports.getQuestionList = function(req, res) {
     success: function(questions) {
       res.json(200, questions)
     },
-    error: function(error) {
+    error: function(question, error) {
       return handleError(res, error);
     }
   });
@@ -30,8 +30,11 @@ exports.getQuestion = function(req, res) {
     success: function(question) {
       res.json(200, question)
     },
-    error: function(error) {
-      return handleError(res, error);
+    error: function(question, error) {
+      console.log('Retrieving question: '+req.params.id);
+      console.log(error);
+
+      return res.send(404, 'Question not found');
     }
   });
 };
