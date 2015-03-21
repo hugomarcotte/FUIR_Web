@@ -31,7 +31,7 @@ angular.module('fuirApp')
         if(!found) {
 
           Question.getQuestion(qId)
-          .then (function(question) {
+          .success(function(question) {
             $scope.question = question;
 
             // to avoid having 31 questions
@@ -42,9 +42,10 @@ angular.module('fuirApp')
             $scope.showCard();
             found = true;
           })
-          .catch(function(err) {
+          .error(function(err) {
             console.log('Cannot get question: ' +err);
           });
+
         }
 
       }

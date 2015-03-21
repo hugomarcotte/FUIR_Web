@@ -5,7 +5,6 @@ angular.module('fuirApp')
 
 
     $scope.question = $scope.ngDialogData.question;
-    //$scope.randomGuy = $scope.ngDialogData.randomGuy;
     $scope.randomGuyNumber = $scope.ngDialogData.randomGuyNumber;
     $scope.cardColor = $scope.ngDialogData.cardColor;
 
@@ -59,7 +58,7 @@ angular.module('fuirApp')
 
           // Get question with new count values
           Question.getQuestion($scope.question.objectId)
-          .then(function(question){
+          .success(function(question) {
 
             // Add results to question in scope
             $scope.question.results = {
@@ -71,7 +70,7 @@ angular.module('fuirApp')
 
             $scope.question.answered = true;
           })
-          .catch(function(err){
+          .error(function(err) {
             console.log('Cannot get results');
             console.log(err);
           });

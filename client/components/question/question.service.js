@@ -28,22 +28,13 @@ angular.module('fuirApp')
 
       getQuestion: function(questionId) {
 
-        var deferred = $q.defer();
+        return $http.get('/api/questions/byId/'+questionId);
 
-        $http.get('/api/questions/byId/'+questionId)
-        .success(function(question) {
-          deferred.resolve(question);
-        })
-        .error(function(err) {
-          deferred.reject(err);
-        });
-
-        return deferred.promise;
       },
 
       saveAnswer: function (questionId, answerIndex) {
 
-        return $http.post('/api/answers/'+questionId, {answerIndex: answerIndex})
+        return $http.post('/api/answers/'+questionId, {answerIndex: answerIndex});
       }
     };
   });
