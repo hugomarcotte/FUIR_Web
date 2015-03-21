@@ -28,6 +28,7 @@ angular.module('fuirApp')
       return false;
     };
 
+    var saving = false;
     $scope.saveAnswer = function(answerIndex) {
 
       // console.log('saving');
@@ -49,34 +50,39 @@ angular.module('fuirApp')
       //   console.log(err);
       // });
 
-      // Save answer
-      Question.saveAnswer($scope.question.objectId, answerIndex)
-      .success(function(newAnswer) {
+      if(!saving) {
+        saving = true;
 
-        // Get question with new count values
-        Question.getQuestion($scope.question.objectId)
-        .then(function(question){
+        // Save answer
+        Question.saveAnswer($scope.question.objectId, answerIndex)
+        .success(function(newAnswer) {
 
-          // Add results to question in scope
-          $scope.question.results = {
-                inMajority: newAnswer.inMajority,
-                percentAnsw1: Math.ceil((question.countAnswer1 / question.totalAnswerCount) * 100),
-                percentAnsw2: Math.floor((question.countAnswer2 / question.totalAnswerCount) * 100),
-                totalAnswerCount: question.totalAnswerCount
-          };
+          // Get question with new count values
+          Question.getQuestion($scope.question.objectId)
+          .then(function(question){
 
-          $scope.question.answered = true;
+            // Add results to question in scope
+            $scope.question.results = {
+                  inMajority: newAnswer.inMajority,
+                  percentAnsw1: Math.ceil((question.countAnswer1 / question.totalAnswerCount) * 100),
+                  percentAnsw2: Math.floor((question.countAnswer2 / question.totalAnswerCount) * 100),
+                  totalAnswerCount: question.totalAnswerCount
+            };
+
+            $scope.question.answered = true;
+          })
+          .catch(function(err){
+            console.log('Cannot get results');
+            console.log(err);
+          });
+
         })
-        .catch(function(err){
-          console.log('Cannot get results');
+        .error(function(err) {
+          console.log('Cannot save answer');
           console.log(err);
         });
 
-      })
-      .error(function(err) {
-        console.log('Cannot save answer');
-        console.log(err);
-      });
+      }
 
     };
 
