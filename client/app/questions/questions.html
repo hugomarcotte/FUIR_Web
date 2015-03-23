@@ -1,0 +1,103 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+<div ng-include="'components/sidenav/sidenav.html'"></div>
+
+<div class="questionList">
+
+    <a class="smallCardOut" href="" ng-click="openQuestionCard(question, $index+1)"  ng-repeat="question in questions">
+      <div class="smallCard {{getCardColor($index+1)}}">
+        <span class="questionText">{{question.questionText}}</span>
+        <!-- <img class="smallStamp" src="assets/images/wrongStamp.png" ng-show="question.results && !question.results.inMajority" alt="You're wrong">
+        <img class="smallStamp" src="assets/images/rightStamp.png" ng-show="question.results && question.results.inMajority" alt="You're right"> -->
+      </div>
+    </a>
+
+</div>
+<script type="text/ng-template" id="questionTemplate">
+<div class="questionCard" md-theme="altTheme">
+
+
+
+  <img class="FUguy" ng-show="getRandomGuy(1,'darkorange')" src="assets/images/dude_1_darkorange.png" alt="FU guy">
+  <img class="FUguy" ng-show="getRandomGuy(1,'orange')" src="assets/images/dude_1_orange.png" alt="FU guy">
+  <img class="FUguy" ng-show="getRandomGuy(1,'red')" src="assets/images/dude_1_red.png" alt="FU guy">
+  <img class="FUguy" ng-show="getRandomGuy(1,'grey')" src="assets/images/dude_1_grey.png" alt="FU guy">
+  <img class="FUguy" ng-show="getRandomGuy(2,'darkorange')" src="assets/images/dude_2_darkorange.png" alt="FU guy">
+  <img class="FUguy" ng-show="getRandomGuy(2,'orange')" src="assets/images/dude_2_orange.png" alt="FU guy">
+  <img class="FUguy" ng-show="getRandomGuy(2,'red')" src="assets/images/dude_2_red.png" alt="FU guy">
+  <img class="FUguy" ng-show="getRandomGuy(2,'grey')" src="assets/images/dude_2_grey.png" alt="FU guy">
+  <img class="FUguy" ng-show="getRandomGuy(3,'darkorange')" src="assets/images/dude_3_darkorange.png" alt="FU guy">
+  <img class="FUguy" ng-show="getRandomGuy(3,'orange')" src="assets/images/dude_3_orange.png" alt="FU guy">
+  <img class="FUguy" ng-show="getRandomGuy(3,'red')" src="assets/images/dude_3_red.png" alt="FU guy">
+  <img class="FUguy" ng-show="getRandomGuy(3,'grey')" src="assets/images/dude_3_grey.png" alt="FU guy">
+  <img class="FUguy" ng-show="getRandomGuy(4,'darkorange')" src="assets/images/dude_4_darkorange.png" alt="FU guy">
+  <img class="FUguy" ng-show="getRandomGuy(4,'orange')" src="assets/images/dude_4_orange.png" alt="FU guy">
+  <img class="FUguy" ng-show="getRandomGuy(4,'red')" src="assets/images/dude_4_red.png" alt="FU guy">
+  <img class="FUguy" ng-show="getRandomGuy(4,'grey')" src="assets/images/dude_4_grey.png" alt="FU guy">
+  <img class="FUguy" ng-show="getRandomGuy(5,'darkorange')" src="assets/images/dude_5_darkorange.png" alt="FU guy">
+  <img class="FUguy" ng-show="getRandomGuy(5,'orange')" src="assets/images/dude_5_orange.png" alt="FU guy">
+  <img class="FUguy" ng-show="getRandomGuy(5,'red')" src="assets/images/dude_5_red.png" alt="FU guy">
+  <img class="FUguy" ng-show="getRandomGuy(5,'grey')" src="assets/images/dude_5_grey.png" alt="FU guy">
+  <img class="FUguy" ng-show="getRandomGuy(6,'darkorange')" src="assets/images/dude_6_darkorange.png" alt="FU guy">
+  <img class="FUguy" ng-show="getRandomGuy(6,'orange')" src="assets/images/dude_6_orange.png" alt="FU guy">
+  <img class="FUguy" ng-show="getRandomGuy(6,'red')" src="assets/images/dude_6_red.png" alt="FU guy">
+  <img class="FUguy" ng-show="getRandomGuy(6,'grey')" src="assets/images/dude_6_grey.png" alt="FU guy">
+  <img class="FUguy" ng-show="getRandomGuy(7,'darkorange')" src="assets/images/dude_7_darkorange.png" alt="FU guy">
+  <img class="FUguy" ng-show="getRandomGuy(7,'orange')" src="assets/images/dude_7_orange.png" alt="FU guy">
+  <img class="FUguy" ng-show="getRandomGuy(7,'red')" src="assets/images/dude_7_red.png" alt="FU guy">
+  <img class="FUguy" ng-show="getRandomGuy(7,'grey')" src="assets/images/dude_7_grey.png" alt="FU guy">
+  <img class="FUguy" ng-show="getRandomGuy(8,'darkorange')" src="assets/images/dude_8_darkorange.png" alt="FU guy">
+  <img class="FUguy" ng-show="getRandomGuy(8,'orange')" src="assets/images/dude_8_orange.png" alt="FU guy">
+  <img class="FUguy" ng-show="getRandomGuy(8,'red')" src="assets/images/dude_8_red.png" alt="FU guy">
+  <img class="FUguy" ng-show="getRandomGuy(8,'grey')" src="assets/images/dude_8_grey.png" alt="FU guy">
+  <img class="stamp" src="assets/images/wrongStamp.png" ng-show="question.results && !question.results.inMajority" alt="You're wrong">
+  <img class="stamp" src="assets/images/rightStamp.png" ng-show="question.results && question.results.inMajority" alt="You're right">
+  <div class="questionText">
+    <div>
+      <span>{{question.questionText }}</span>
+    </div>
+  </div>
+  <div class="questionAnswers">
+    <div class= "buttons">
+      <div ng-class="{'showResultsButton' : question.results}" style="width:70%;margin:auto;">
+        <div>
+          <button class="btn btn-primary" ng-disabled="question.results" ng-click="question.results || saveAnswer(0)">{{question.answer1Text}}</button>
+        </div>
+        <div>
+          <button class="btn btn-primary"  ng-disabled="question.results" ng-click="question.results || saveAnswer(1)">{{question.answer2Text}}</button>
+        </div>
+      </div>
+      <div ng-show="question.results" class="results" >
+        <div class="resultsDiv">
+          <span class="resultsText" ng-show="question.results">{{question.results.percentAnsw1}}%</span>
+        </div>
+        <div class="resultsDiv">
+          <span class="resultsText" ng-show="question.results">{{question.results.percentAnsw2}}%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="response" ng-show="question.results">
+      {{question.results.totalAnswerCount}} responses
+    </div>
+  </div>
+
+  <!--<div class="footer" style="height: 15%;">-->
+    <!--<div class="shareHeart">-->
+      <!--&lt;!&ndash; <img src="assets/images/heart.png" alt="Favorite"> &ndash;&gt;-->
+      <!--&lt;!&ndash; <img src="assets/images/heart_filled.png" alt="Favorite"> &ndash;&gt;-->
+
+      <!--&lt;!&ndash;-->
+      <!--<img src="assets/images/share.png" ng-click="shareQuestion = true" alt="Share" style="cursor:pointer;">-->
+
+      <!--<a href="#" socialshare socialshare-provider="facebook" socialshare-text="share on facebook" socialshare-media="http://720kb.net/assets/img/logo.png">-->
+      <!--facebook-->
+      <!--</a>-->
+      <!--<a href="#" socialshare socialshare-provider="twitter" socialshare-text="Share on twitter" socialshare-media="http://fuimright.herokuapp.com/assets/images/4921eac3.question_guy_red.png">-->
+      <!--twitter-->
+      <!--</a>-->
+      <!--&ndash;&gt;-->
+    <!--</div>-->
+  <!--</div>-->
+</div>
+</script>

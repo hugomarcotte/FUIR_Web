@@ -14,25 +14,17 @@
 
       <div class="sendLink">
         send me a download link
-        <input placeholder="Phone Number" ng-model="phoneNumber" ng-change="smsSent = false" required md-maxlength="10">
+        <input placeholder="888-888-8888"  ng-model="phoneNumber" ng-change="smsSent = false" style="text-align:center;">
         <br>
         <button class="btn btn-primary" ng-click="sendAppLink()">Send</button>
-        <label ng-show="smsSent">SMS was sent</label>
+        <div>
+          <label ng-show="smsSent">SMS was sent</label>
+        </div>
       </div>
       <div class="copyright">
         © FUIR, LLC. 2015
       </div>
 
-
-      <!-- <div class="copyright" layout="row" layout-align="space-between center">
-        <div>
-          © FUIR, LLC. 2014
-        </div>
-        <div>
-          <a href="/privacy">Privacy</a>
-          <a style="margin-left: 5px;" href="/terms">Terms</a>
-        </div>
-      </div> -->
     </div>
 
   </md-sidenav>

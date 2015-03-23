@@ -1,0 +1,451 @@
+
+/////////////////////////////////
+// DIALOG FOR BIG QUESTION CARDS
+///////////////////////////////
+
+@-webkit-keyframes ngdialog-flipin-horizontal {
+  0% {
+    opacity: 0;
+    -webkit-transform: rotateY(-90deg);
+    transform: rotateY(-90deg);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+}
+
+@keyframes ngdialog-flipin-horizontal {
+  0% {
+    opacity: 0;
+    -webkit-transform: rotateY(-90deg);
+    -ms-transform: rotateY(-90deg);
+    transform: rotateY(-90deg);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+}
+
+@-webkit-keyframes ngdialog-flipout-horizontal {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: rotateY(90deg);
+    transform: rotateY(90deg);
+  }
+}
+
+@keyframes ngdialog-flipout-horizontal {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: rotateY(90deg);
+    -ms-transform: rotateY(90deg);
+    transform: rotateY(90deg);
+  }
+}
+
+.ngdialog.ngdialog-theme-default.ngdialog-closing .ngdialog-content {
+  /* -webkit-animation: ngdialog-flipout-horizontal .5s;
+  animation: ngdialog-flipout-horizontal .5s; */
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-content {
+  /* -webkit-animation: ngdialog-flipin-horizontal .5s;
+  animation: ngdialog-flipin-horizontal .5s; */
+  width: 450px;
+  height: 600px;
+  margin-top: -100px;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2), 0 40px 77px 0 rgba(0, 0, 0, 0.22);
+  -moz-box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2), 0 40px 77px 0 rgba(0, 0, 0, 0.22);
+  box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2), 0 40px 77px 0 rgba(0, 0, 0, 0.22);
+
+  padding: 0.5em 0.5em;
+}
+
+
+.ngdialog.ngdialog-theme-default .ngdialog-close:before {
+  color: #212121;
+  font-family: 'jonze',  sans-serif;
+  font-size: 2em;
+  line-height: 20px;
+  right: 5px;
+}
+
+.ngdialog.ngdialog-theme-default.bigorangeCard .ngdialog-content {
+  background-color: #F7941E;
+}
+.ngdialog.ngdialog-theme-default.bigredCard .ngdialog-content {
+  background-color: #BE1E2D;
+}
+.ngdialog.ngdialog-theme-default.biggreyCard .ngdialog-content {
+  background-color: #6D6E71;
+}
+.ngdialog.ngdialog-theme-default.bigdarkOrangeCard .ngdialog-content {
+  background-color: #D96C24;
+}
+
+.ngdialog-overlay {
+  /* background:none; */
+}
+
+
+
+/////////////////////////////////
+// BIG QUESTION CARDS
+///////////////////////////////
+
+.questionCard {
+  font-family: 'DharmaGothicPRegular',  sans-serif;
+  color: #212121;
+  text-align: center;
+  font-size: 1.5em;
+  height: 100%;
+
+  button {
+    //display: inline-block; //for width and height to work
+    //margin-top: 10px;
+    width: 100%;
+    min-height: 90px;
+    text-transform:none;
+    font-size: 0.6em;
+    margin: 5px 1px;
+    span {
+      white-space: initial;
+    }
+  }
+
+  .md-button.md-altTheme-theme[disabled],
+  .md-button.md-altTheme-theme.md-raised[disabled],
+  .md-button.md-altTheme-theme.md-fab[disabled] {
+    cursor: not-allowed;
+  }
+  .FUguy {
+    width: 175px;
+    position: absolute;
+    left: 5%;
+    top: 32%;
+  }
+  .stamp {
+    width: 130px;
+    position: absolute;
+    left: 65%;
+    top: 35%;
+
+
+  }
+  .ng-hide-remove { animation:0.5s zoomIn ease; }//flipInX
+
+  .questionText {
+    height: 40%;
+    padding-top: 25px;
+
+    div {
+      height:100%;
+      width: 100%;
+      display:table;
+      span {
+        display:table-cell;
+
+      }
+    }
+  }
+
+  .questionAnswers {
+    width: 100%;
+    height: 53%;
+    display: table;
+
+    .buttons {
+      display: table-cell;
+      vertical-align: bottom;
+
+      .showResultsButton {
+        float: left;
+      }
+
+      .results {
+        float: left;
+        .resultsDiv {
+          height: 100px;
+          line-height: 100px;
+
+          .resultsText{
+            font-family: 'jonze',  sans-serif;
+            font-size: 1.5em;
+            margin-left: 15px;
+          }
+        }
+
+      }
+      .ng-hide-remove { animation:0.5s slideInRight ease; }
+
+
+    }
+  }
+
+  .footer {
+    font-family: 'jonze',  sans-serif;
+    font-size: 0.7em;
+    width: 100%;
+    height: 7%;
+    display: table;
+    line-height: 35px;
+    .response {
+      text-align:left;
+      display: table-cell;
+      vertical-align: bottom;
+      padding-left: 7px;
+    }
+    .shareHeart {
+      text-align:right;
+      display: table-cell;
+      /* vertical-align: bottom; */
+      padding-right: 60px;
+      img {
+        margin-left: 20px;
+        height: 50px;
+      }
+    }
+    .ng-hide-remove { animation:0.5s fadeIn ease; }
+
+  }
+}
+
+.bigorangeCard {
+  .questionCard {
+    .md-button{
+      background-color: #BE1E2D;
+    }
+    .btn-primary:not(.btn-link):not(.btn-flat) {
+      background-color: #BE1E2D;
+      color: #212121;
+    }
+  }
+}
+
+.bigredCard {
+  .questionCard {
+    .md-button{
+      background-color: #6D6E71;
+    }
+    .btn-primary:not(.btn-link):not(.btn-flat) {
+      background-color: #6D6E71;
+      color: #212121;
+    }
+  }
+}
+
+.biggreyCard {
+  .questionCard {
+    .md-button{
+      background-color: #D96C24;
+    }
+    .btn-primary:not(.btn-link):not(.btn-flat) {
+      background-color: #D96C24;
+      color: #212121;
+    }
+  }
+}
+
+.bigdarkOrangeCard {
+  .questionCard {
+    .md-button{
+      background-color: #F7941E;
+    }
+    .btn-primary:not(.btn-link):not(.btn-flat) {
+      background-color: #F7941E;
+      color: #212121;
+    }
+  }
+}
+
+
+/////////////////////////////////
+// SMALL QUESTION CARDS
+///////////////////////////////
+
+.questionList {
+
+  margin: 75px -3px;
+}
+
+.orangeCard {
+  background-color: #F7941E;
+}
+.redCard {
+  background-color: #BE1E2D;
+}
+.greyCard {
+  background-color: #6D6E71;
+}
+.darkOrangeCard {
+  background-color: #D96C24;
+}
+
+.smallCardOut {
+  float:left;
+  height: 211px;
+}
+
+.smallCard {
+  border-radius: 2px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.76), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+
+  height: calc(100% - 6px);
+  width: calc(100% - 6px);
+  margin: 3px;
+  padding: 10px;
+  text-align:center;
+  line-height: 1.2;
+  display: table;
+
+  .questionText {
+    font-size: 1.3em;
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .smallStamp {
+    width: 75px;
+    position: absolute;
+    left: 54%;
+  }
+}
+
+
+
+
+////////////////////////////////
+// Media queries
+///////////////////////////////
+
+// Media Query Ranges
+$small-screen: 700px !default;
+$medium-screen: 992px !default;
+$large-screen: 1200px !default;
+
+$medium-and-up: "only screen and (min-width : #{$small-screen})";
+$large-and-up: "only screen and (min-width : #{$medium-screen})";
+
+$small-and-down: "only screen and (max-width : #{$small-screen})";
+$medium-and-down: "only screen and (max-width : #{$medium-screen})";
+
+$medium-only: "only screen and (min-width : #{$small-screen}) and (max-width : #{$medium-screen})";
+
+@media #{$large-and-up} {
+  .smallCard {
+  }
+  .smallCardOut {
+    width: calc( 100% / 5);
+  }
+}
+@media only screen and (max-width : 1145px) {
+  .smallCard {
+  }
+  .smallCardOut {
+    width: calc( 100% / 4);
+  }
+}
+@media #{$medium-and-down} {
+  .smallCard {
+  }
+  .smallCardOut {
+    width: calc( 100% / 3);
+  }
+}
+@media #{$small-and-down} {
+  .smallCard {
+  }
+  .smallCardOut {
+    width: calc( 100% / 2);
+  }
+
+
+}
+
+@media only screen and (max-width : 500px) {
+  .headerFUIR {
+
+    .md-toolbar-tools {
+      padding: 0 5px;
+      font-size: 1.5em;
+    }
+  }
+}
+
+@media only screen and (max-width : 435px) {
+  .questionList {
+    margin: 75px 0px;
+  }
+
+  .ngdialog.ngdialog-theme-default .ngdialog-content {
+    width: 100%;
+    height: 550px;
+    margin-top: -160px;
+  }
+  .questionCard {
+    font-size: 1.2em;
+    line-height: 1em;
+    .FUguy {
+      width: 160px;
+      top: 30%;
+    }
+    .stamp {
+      width: 33%;
+      top: 30%;
+    }
+    .questionAnswers {
+      .buttons {
+        .showResultsButton {
+          .resultsDiv {
+            min-height: 65px;
+            line-height: 65px;
+            margin-top: 10px;
+          }
+        }
+        .showResults {
+          .resultsDiv {
+            height: 80px;
+            line-height: 80px;
+          }
+        }
+      }
+    }
+  }
+  .headerFUIR {
+
+    .logo {
+      height: 90%;
+      width:auto;
+    }
+
+  }
+
+  .smallCard {
+    .questionText {
+      font-size: 1em;
+    }
+  }
+
+}
