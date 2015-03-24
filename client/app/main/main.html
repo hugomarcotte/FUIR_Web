@@ -24,7 +24,7 @@
 
   <div style="height:700px;background-color:#F7941E;margin-top:75px;">
     <div class="padded">
-      <img class="phone1" src="assets/images/phone1.png" alt="" style="width:13em;">
+      <img class="phone1" src="assets/images/phone1.png" alt="">
 
       <div class="display1">
         <img src="assets/images/dude_2_red.png" alt="FU dude" class="bigDude">
@@ -40,11 +40,11 @@
   <div style="height:700px;background-color:#BDBDBD;">
     <div class = "padded">
       <div>
-        <img class = "phone2" src="assets/images/phone2.png" alt="" style="width:13em;">
+        <img class = "phone2" src="assets/images/phone2.png" alt="">
       </div>
       <div class = "display2">
-        <img src="assets/images/dude_1_darkorange.png" alt="FU dude" class="bigDude">
         <p class ="bigText" style = "color: #D96C29">Pose your own questions to the world</p>
+        <img src="assets/images/dude_1_darkorange.png" alt="FU dude" class="bigDude2">
       </div>
     </div>
   </div>
@@ -54,7 +54,15 @@
     <div class = "padded">
       <div class = "display3">
         <img src="assets/images/dude_7_orange.png" alt="FU dude" class="bigDude">
-        <p class ="bigText" style = "color: #F7941E">Text me a download link:</p>
+        <p class="bigText" style="color:#F7941E;display:inline-block;margin-bottom:0px;width:80%;">Text me a download link:</p>
+        <input placeholder="888-888-8888"  ng-model="phoneNumber" ng-change="smsSent = false" style="text-align:center">
+<!--          
+            <button class="btn btn-primary" style="display:inline" ng-click="sendAppLink()">Send</button>
+          <div>
+            <label ng-show="smsSent">SMS was sent</label>
+          </div>
+-->
+      </div>
       </div>
     </div>
   </div>

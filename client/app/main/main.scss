@@ -1,7 +1,6 @@
 
 
 
-
 .padded {
     padding-top: 5%;
     padding-right: 5%;
@@ -20,52 +19,63 @@
 
 .display2 {
 	display: block;
-    float: right;
-    margin-left: auto;
-    margin-right: auto;
-    width: 70%;
+  float: right;
+  margin-top: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
 }
 
 .display3 {
 	display: block;
-    float: center;
-    margin-left: auto;
-    margin-right: auto;
-    width: 60%;
+  float: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
 }
 
 .foot {
-    padding-top: 0%;
-    padding-right: 5%;
-    padding-bottom: 0px;
-    padding-left: 5%;
+  padding-top: 5px;
+  padding-right: 5%;
+  padding-bottom: 0px;
+  padding-left: 5%;
+  color: #B3B4B6;
+  font-size: .9em;
+  font-family: Helvetica, Arial, 'Dharma Gothic P';
 }
 
 
 .phone1 {
 	position: relative;
 	float: right;
-    top: 0px;
-    right: 0px;
+  top: 0px;
+  right: 0px;
+  width: 280px;
 }
 
 .phone2 {
 	position: relative;
 	float: left;
-    top: 0px;
-    right: 0px;
+  top: 0px;
+  right: 0px;
+  width: 280px;
 }
 
 .bigDude {
 	display: inline;
-	width:6em;
+	width:6.2em;
+}
+
+.bigDude2 {
+  display: inline;
+  width:6.2em;
 }
 
 .bigText {
    display: inline-block;
    src: url('/assets/jonze.eot');
    src: url('/assets/DharmaGothicP_Regular_R-webfont.eot');
-   font-family: 'Dharma Gothic P', 'jonze', serif, Arial;
+   font-family: 'Dharma Gothic P', 'jonze', Arial;
    font-size: 3em;
    line-height: 110%;
    width: 70%;
@@ -74,25 +84,65 @@
 
 .appLogo {
 	display: block;
-    float: center;
-    margin-left: auto;
-    margin-right: auto;
-    width:13em;
-    margin-top:7em;
+  float: center;
+  margin-left: auto;
+  margin-right: auto;
+  width:13em;
+  margin-top:7em;
 }
 
 .appLink {
 	src: url('/assets/jonze.eot');
-   	src: url('/assets/DharmaGothicP_Regular_R-webfont.eot');
-   	font-family: 'Dharma Gothic P', 'jonze', serif, Arial;
-   	font-size: 1.5em;
-   	color: #231F20;
+  src: url('/assets/DharmaGothicP_Regular_R-webfont.eot');
+  font-family: 'Dharma Gothic P', 'jonze', serif, Arial;
+  font-size: 1.5em;
+  color: #231F20;
 	opacity: 0.6;
 	text-decoration: none;
 }
 
+.input1{
+  display: block;
+  float: center;
+  margin-left: auto;
+  margin-right: auto;
+  width:13em;
+  margin-top:30px;
+}
+
+
+
+
 @media only screen and (max-width : 800px) {
+  
   .display1{
     display:none;
   }
+
+  .bigDude {
+    display: none;
+  }
+
+  .bigText {
+  }
+
+  .phone1 {
+    display: block;
+    float: center;
+    width: 230px;
+  }
+
+  .phone2 {
+    display:none;
+  }
+
+  .appLogo {
+    margin-top:1em;
+    width:9em;
+  }
+
+  .appLink {
+  margin-top: 0px;  
+  }
+
 }
