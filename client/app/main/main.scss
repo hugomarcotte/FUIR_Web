@@ -110,24 +110,56 @@
   margin-top:30px;
 }
 
+.mobile2{
+  display: none;
+}
 
 
+@media only screen and (max-width : 1050px) {
 
-@media only screen and (max-width : 800px) {
-  
-  .display1{
+  .display1 {
     display:none;
+  }
+  
+  .display2 {
+    display:none;
+  }
+  
+  .display3 {
+    display: block;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    float: center;
+    text-align: center;
+  }
+
+  .mobile2 {
+    display: block;
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    float: center;
+    text-align: center;
   }
 
   .bigDude {
     display: none;
   }
 
+  .bigDude2 {
+    width:5em;
+  }
+
   .bigText {
+    font-size:2.5em;
+    line-height:1.2;
   }
 
   .phone1 {
     display: block;
+    margin-left: auto;
+    margin-right: auto;
     float: center;
     width: 230px;
   }
