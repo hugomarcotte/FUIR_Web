@@ -18,18 +18,70 @@
     </md-content>
   </headroom>
 </div>
+
 <div ng-include="'components/sidenav/sidenav.html'"></div>
-<div style="height:700px;background-color:#F7941E;margin-top:75px;">
-  <div>
-    <img src="assets/images/dude_2_red.png" alt="FU dude" style="width:130px;">
+
+
+  <div style="height:700px;background-color:#F7941E;margin-top:75px;">
+    <div class="padded">
+      <img class="phone1" src="assets/images/phone1.png" alt="">
+      <div class="display1">
+        <img src="assets/images/dude_2_red.png" alt="FU dude" class="bigDude">
+        <p class ="bigText" style = "color: #BE1E2D;margin-left:20px;position:relative;top:-20px;">Weigh in on other people's social problems</p>
+      </div>
+
+      <a href="http://bit.ly/1rBoRu7"><img src="assets/images/AppStore.png" alt="" class="appLogo"></a>
+      <a href="http://www.fuimright.com/q"><p class="appLink" style= "text-align: center;">or try it on web now</p></a>
+    </div>
   </div>
-</div>
-<div style="height:700px;background-color:#BDBDBD;">
 
-</div>
-<div style="height:400px;background-color:#6D6E71;">
 
-</div>
-<div style="height:75px;background-color:#BE1E2D;">
+  <div style="height:700px;background-color:#BDBDBD;">
+    <div class = "padded">
+      <div>
+        <img class = "phone2" src="assets/images/phone2.png" alt="">
+      </div>
+      <div class="display2">
+        <p class="bigText" style="color:#D96C29;position:relative;top:-20px;">Pose your own questions to the world</p>
+        <img src="assets/images/dude_1_darkorange.png" alt="FU dude" class="bigDude">
+      </div>
+      <div class="mobile2">
+        <img src="assets/images/dude_1_darkorange.png" alt="FU dude" class="bigDude2">
+        <p style="color:#D96C29;font-size:2.5em;line-height:1.2">Weigh in on other people's social problems and pose your own questions to the world</p>
+      </div>
+    </div>
+  </div>
 
-</div>
+
+  <div style="height:400px;background-color:#6D6E71;">
+    <div class = "padded">
+      <div class = "display3">
+        <div style="display:inline">
+          <img src="assets/images/dude_7_orange.png" alt="FU dude" class="bigDude" style="position:relative;top:40px;left:-20;">
+        </div>
+        <div style="display:inline">
+          <p class="bigText" style="color:#F7941E;margin-bottom:0px;position:relative;top:-40px;">Text me a download link:</p>
+          <div class="push3">
+            <div style="display:inline-block;">
+              <input class="input3" placeholder="888-888-8888"  ng-model="phoneNumber" ng-change="smsSent = false" style="">
+            </div>         
+            <div style="display:inline-block;">
+              <button class="btn btn-primary btn3" style="" ng-click="sendAppLink()">Send</button>
+            </div>
+          </div>
+          <div>
+            <label ng-show="smsSent">SMS was sent</label>
+          </div>
+       </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div style="height:75px;background-color:#BE1E2D;">
+
+    <div class = "foot">
+      <p>© 2015 FUIR LLC</p>
+    </div>
+
+  </div>
