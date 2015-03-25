@@ -27,10 +27,10 @@
       <img class="phone1" src="assets/images/phone1.png" alt="">
       <div class="display1">
         <img src="assets/images/dude_2_red.png" alt="FU dude" class="bigDude">
-        <p class ="bigText" style = "color: #BE1E2D; margin-left: 20px">Weigh in on other people's social problems</p>
+        <p class ="bigText" style = "color: #BE1E2D;margin-left:20px;position:relative;top:-20px;">Weigh in on other people's social problems</p>
       </div>
 
-      <a href="bit.ly/1rBoRu7"><img src="assets/images/AppStore.png" alt="" class="appLogo"></a>
+      <a href="http://bit.ly/1rBoRu7"><img src="assets/images/AppStore.png" alt="" class="appLogo"></a>
       <a href="http://www.fuimright.com/q"><p class="appLink" style= "text-align: center;">or try it on web now</p></a>
     </div>
   </div>
@@ -42,7 +42,7 @@
         <img class = "phone2" src="assets/images/phone2.png" alt="">
       </div>
       <div class="display2">
-        <p class="bigText" style = "color:#D96C29">Pose your own questions to the world</p>
+        <p class="bigText" style="color:#D96C29;position:relative;top:-20px;">Pose your own questions to the world</p>
         <img src="assets/images/dude_1_darkorange.png" alt="FU dude" class="bigDude">
       </div>
       <div class="mobile2">
@@ -56,16 +56,23 @@
   <div style="height:400px;background-color:#6D6E71;">
     <div class = "padded">
       <div class = "display3">
-        <img src="assets/images/dude_7_orange.png" alt="FU dude" class="bigDude">
-        <p class="bigText" style="color:#F7941E;display:inline-block;margin-bottom:0px;width:80%;">Text me a download link:</p>
-        <input placeholder="888-888-8888"  ng-model="phoneNumber" ng-change="smsSent = false" style="text-align:center">
-<!--          
-            <button class="btn btn-primary" style="display:inline" ng-click="sendAppLink()">Send</button>
+        <div style="display:inline">
+          <img src="assets/images/dude_7_orange.png" alt="FU dude" class="bigDude" style="position:relative;top:40px;left:-20;">
+        </div>
+        <div style="display:inline">
+          <p class="bigText" style="color:#F7941E;margin-bottom:0px;position:relative;top:-40px;">Text me a download link:</p>
+          <div class="push3">
+            <div style="display:inline-block;">
+              <input class="input3" placeholder="888-888-8888"  ng-model="phoneNumber" ng-change="smsSent = false" style="">
+            </div>         
+            <div style="display:inline-block;">
+              <button class="btn btn-primary btn3" style="" ng-click="sendAppLink()">Send</button>
+            </div>
+          </div>
           <div>
             <label ng-show="smsSent">SMS was sent</label>
           </div>
--->
-      </div>
+       </div>
       </div>
     </div>
   </div>

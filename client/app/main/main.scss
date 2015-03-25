@@ -87,7 +87,7 @@
   float: center;
   margin-left: auto;
   margin-right: auto;
-  width:13em;
+  width:12em;
   margin-top:7em;
 }
 
@@ -101,18 +101,37 @@
 	text-decoration: none;
 }
 
-.input1{
-  display: block;
-  float: center;
-  margin-left: auto;
-  margin-right: auto;
-  width:13em;
-  margin-top:30px;
+.input3{
+  text-align:center;
+  margin-right:10px;
+  height:50px;
+  width:300px;
+  font-size:180%;
 }
+
+.btn3 {
+  display:inline;
+  margin-top:0px;
+  margin-right:10px;
+  margin-bottom:0px;
+  height:50px;
+  float:center;
+  position: relative;
+  top: -7px;
+}
+
+.push3{
+  position:relative;
+  left:195px;
+}
+
 
 .mobile2{
   display: none;
 }
+
+
+
 
 
 @media only screen and (max-width : 1050px) {
@@ -127,11 +146,13 @@
   
   .display3 {
     display: block;
-    margin-top: 5%;
+    margin-top: 8%;
     margin-left: auto;
     margin-right: auto;
     float: center;
     text-align: center;
+    width: 80%;
+
   }
 
   .mobile2 {
@@ -175,6 +196,19 @@
 
   .appLink {
   margin-top: 0px;  
+  }
+
+  .input3{
+    margin-top:20px;
+  }
+
+  .btn3 {
+    margin-top: 20px;
+  }
+
+  .push3{
+    left: 0px;
+    top: -40px;
   }
 
 }
