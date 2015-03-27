@@ -11,7 +11,7 @@ angular.module('fuirApp')
 
       $scope.questions = questions;
 
-      var qId = $stateParams.Id;
+      var qId = $stateParams.qId;
 
       // If question Id in URL
       if(qId) {
@@ -58,11 +58,11 @@ angular.module('fuirApp')
     $scope.$on('$locationChangeSuccess',function(event, next) {
 
       // if no Id in query string (privacy, terms...)
-      if(next.indexOf('?Id=') !== -1) {
+      if(next.indexOf('?qId=') !== -1) {
 
         // If back button is pressed get question from URL params
         if(!$scope.openFlag) {
-          var questionId = next.slice(next.indexOf('?Id=')+5);
+          var questionId = next.slice(next.indexOf('?qId=')+5);
           for(var i =0; i < $scope.questions.length; i++) {
             if($scope.questions[i].objectId === questionId) {
               $scope.qIndex = i+1;
@@ -97,7 +97,7 @@ angular.module('fuirApp')
         $scope.openFlag = true;
 
         // Change URL
-        $location.search('Id', question.objectId);
+        $location.search('qId', question.objectId);
       }
       else {
         $scope.showCard();

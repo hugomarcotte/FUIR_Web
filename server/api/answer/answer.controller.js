@@ -48,13 +48,17 @@ exports.create = function(req, res) {
           res.json(200, newAnswer);
         },
         error: function(newAnswer, error) {
-          return handleError(res, error);
+          console.log('Couldnt save answer.');
+          console.log(error);
+          return res.send(500, 'Answer couldnt be saved');
         }
       });
 
     },
     error: function(error) {
-      return handleError(res, error);
+      console.log('Couldnt save answer because question was not found.')
+      console.log(error);
+      return res.send(500, 'Answer couldnt be saved');
     }
   });
 

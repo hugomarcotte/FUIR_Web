@@ -4,7 +4,7 @@ angular.module('fuirApp')
   .config(function ($stateProvider) {
     $stateProvider
       .state('questions', {
-        url: '/q?Id',
+        url: '/q?qId',
         templateUrl: 'app/questions/questions.html',
         controller: 'QuestionsCtrl',
         reloadOnSearch : false

@@ -15,7 +15,9 @@ exports.getQuestionList = function(req, res) {
       res.json(200, questions)
     },
     error: function(question, error) {
-      return handleError(res, error);
+      console.log('Coudnt get question list.')
+      console.log(error);
+      return res.send(404, 'Questions not found');
     }
   });
 
@@ -31,7 +33,7 @@ exports.getQuestion = function(req, res) {
       res.json(200, question)
     },
     error: function(question, error) {
-      console.log('Retrieving question: '+req.params.id);
+      console.log('Couldnt retrieve question: '+req.params.id);
       console.log(error);
 
       return res.send(404, 'Question not found');
