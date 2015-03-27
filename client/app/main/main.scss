@@ -140,7 +140,7 @@
 
   .display3 {
     display: block;
-    margin-top: 8%;
+    margin-top: 2%;
     margin-left: auto;
     margin-right: auto;
     float: center;
@@ -169,6 +169,8 @@
   .bigText {
     font-size:2.5em;
     line-height:1.2;
+    width: 100%;
+
   }
 
   .phone1 {
@@ -192,9 +194,14 @@
   margin-top: 0px;
   }
 
-  .input3{
+  .input3 {
     margin-top:20px;
   }
+
+
+  .input3 {
+    width:250px;
+}
 
   .btn3 {
     margin-top: 20px;
@@ -204,5 +211,11 @@
     left: 0px;
     top: -40px;
   }
+
+  .foot {
+    padding-top: 10px;
+    font-size: .6em;
+  }
+
 
 }
