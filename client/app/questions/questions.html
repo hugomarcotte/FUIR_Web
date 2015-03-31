@@ -49,8 +49,8 @@
   <img class="FUguy" ng-show="getRandomGuy(8,'orange')" src="assets/images/dude_8_orange.png" alt="FU guy">
   <img class="FUguy" ng-show="getRandomGuy(8,'red')" src="assets/images/dude_8_red.png" alt="FU guy">
   <img class="FUguy" ng-show="getRandomGuy(8,'grey')" src="assets/images/dude_8_grey.png" alt="FU guy">
-  <img class="stamp" src="assets/images/wrongStamp.png" ng-show="question.results && !question.results.inMajority" alt="You're wrong">
-  <img class="stamp" src="assets/images/rightStamp.png" ng-show="question.results && question.results.inMajority" alt="You're right">
+  <img class="stamp" src="assets/images/wrongStamp.png" ng-show="showResult && !results.inMajority" alt="You're wrong">
+  <img class="stamp" src="assets/images/rightStamp.png" ng-show="showResult && results.inMajority" alt="You're right">
   <div class="questionText">
     <div>
       <span>{{question.questionText }}</span>
@@ -58,46 +58,29 @@
   </div>
   <div class="questionAnswers">
     <div class= "buttons">
-      <div ng-class="{'showResultsButton' : question.results}" style="width:70%;margin:auto;">
+      <div ng-class="{'showResultsButton' : showResult}" style="width:70%;margin:auto;">
         <div>
-          <button class="btn btn-primary" ng-disabled="question.results" ng-click="question.results || saveAnswer(0)">{{question.answer1Text}}</button>
+          <button class="btn btn-primary" ng-click="saveAnswer(0)">{{question.answer1Text}}</button>
         </div>
         <div>
-          <button class="btn btn-primary"  ng-disabled="question.results" ng-click="question.results || saveAnswer(1)">{{question.answer2Text}}</button>
+          <button class="btn btn-primary" ng-click="saveAnswer(1)">{{question.answer2Text}}</button>
         </div>
       </div>
-      <div ng-show="question.results" class="results" >
+      <div ng-show="showResult" class="results" >
         <div class="resultsDiv">
-          <span class="resultsText" ng-show="question.results">{{question.results.percentAnsw1}}%</span>
+          <span class="resultsText" ng-show="showResult">{{results.percentAnsw1}}%</span>
         </div>
         <div class="resultsDiv">
-          <span class="resultsText" ng-show="question.results">{{question.results.percentAnsw2}}%</span>
+          <span class="resultsText" ng-show="showResult">{{results.percentAnsw2}}%</span>
         </div>
       </div>
     </div>
   </div>
   <div class="footer">
-    <div class="response" ng-show="question.results">
-      {{question.results.totalAnswerCount}} responses
+    <div class="response" ng-show="results">
+      {{results.totalAnswerCount}} responses
     </div>
   </div>
 
-  <!--<div class="footer" style="height: 15%;">-->
-    <!--<div class="shareHeart">-->
-      <!--&lt;!&ndash; <img src="assets/images/heart.png" alt="Favorite"> &ndash;&gt;-->
-      <!--&lt;!&ndash; <img src="assets/images/heart_filled.png" alt="Favorite"> &ndash;&gt;-->
-
-      <!--&lt;!&ndash;-->
-      <!--<img src="assets/images/share.png" ng-click="shareQuestion = true" alt="Share" style="cursor:pointer;">-->
-
-      <!--<a href="#" socialshare socialshare-provider="facebook" socialshare-text="share on facebook" socialshare-media="http://720kb.net/assets/img/logo.png">-->
-      <!--facebook-->
-      <!--</a>-->
-      <!--<a href="#" socialshare socialshare-provider="twitter" socialshare-text="Share on twitter" socialshare-media="http://fuimright.herokuapp.com/assets/images/4921eac3.question_guy_red.png">-->
-      <!--twitter-->
-      <!--</a>-->
-      <!--&ndash;&gt;-->
-    <!--</div>-->
-  <!--</div>-->
 </div>
 </script>
