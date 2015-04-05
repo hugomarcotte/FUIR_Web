@@ -10,7 +10,7 @@ angular.module('fuirApp')
     $scope.cardColor = $scope.ngDialogData.cardColor;
 
 
-    console.log($scope.question);
+    // console.log($scope.question);
 
     $scope.getRandomGuy = function(num, color) {
 
