@@ -44,6 +44,18 @@
   font-family: Helvetica, Arial, 'Dharma Gothic P';
 }
 
+.footer-nav {
+  display: block;
+  font-family: Helvetica, Arial, 'Dharma Gothic P';
+  color: #B3B4B6;
+  background-color: #BE1E2D;
+  font-size: .9em;
+  margin-top: 0px;
+  padding-right: 5%;
+  padding-bottom: 0px;
+  padding-left: 5%;
+  text-align: center;
+}
 
 .phone1 {
 	position: relative;
@@ -127,8 +139,24 @@
 }
 
 
+a:link {
+  color: #B3B4B6;
+  text-decoration: none;
+}
 
+.line1 {
+  display:inline;
+  margin-left:30px;
+}
 
+.line2 {
+  display:inline;
+  margin-left:100px;
+}
+
+.footmargin {
+  padding-top:20px;
+}
 
 @media only screen and (max-width : 1050px) {
 
@@ -219,5 +247,24 @@
     font-size: .6em;
   }
 
+  .footer-nav {
+    padding-top: 10px;
+    font-size: .6em; 
+  }
+
+  .line1 {
+    margin-left:10px;
+  }
+
+  .line2 {
+    display: block;
+    margin-left: 20px;
+    line-height: 30px;
+
+  }
+
+  .footmargin {
+    padding-top:5px;
+  }
 
 }
