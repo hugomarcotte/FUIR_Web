@@ -2,10 +2,10 @@
 
 var _ = require('lodash');
 var config = require('../../config/environment');
-var Parse = require('parse').Parse;
+var Parse = require('parse/node');
 
-Parse.initialize(config.parse.appId, config.parse.jsKey);
-
+Parse.initialize(config.parse.appId);
+Parse.serverURL = 'https://fuimrightserver.herokuapp.com/parse';
 
 // Save a new answer
 exports.create = function(req, res) {
